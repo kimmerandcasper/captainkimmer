@@ -300,12 +300,13 @@
         const navLinks = document.querySelectorAll('.navbar .nav-link');  // Select all nav links
     
         navLinks.forEach(link => {
-            // Check if the current URL path matches the link's href or if the homepage is selected
-            if (link.href.includes(currentPath) || (currentPath === '/' && link.href.includes('index.html'))) {
+            // Check if it's the homepage or if the link matches the current page path
+            if ((currentPath === '/' && link.href === 'https://captainkimmer.com/') || link.href.includes(currentPath)) {
                 link.classList.add('active');  // Add the 'active' class to underline
             }
         });
     </script>
+    
 </body>
 
 </html>
