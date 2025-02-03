@@ -36,7 +36,10 @@
         body {
             font-family: 'Arial', sans-serif;
             color: #333;
+            margin: 0;
+            padding: 0;
         }
+    
         .header {
             background-color: #005f73;
             color: white;
@@ -44,23 +47,23 @@
             text-align: center;
             position: relative;
         }
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
+
+        /* Title centered */
         .header h1 {
             font-family: 'Amatic SC', cursive;
             font-size: 4rem;
             margin: 0;
-            display: flex;
-            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
         }
-        .header p {
-            font-size: 1.2rem;
-            margin-top: 5px;
+
+        /* For the subtitle below the title */
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 10px;
         }
+
         .nav-divider {
             width: 80%;
             margin: 10px auto;
@@ -68,21 +71,38 @@
             height: 1px;
             background-color: white;
         }
+
+        .navbar {
+            margin-top: 5px;
+        }
+
         .navbar .nav-link {
             color: white;
             font-weight: bold;
             transition: color 0.3s;
         }
+
         .navbar .nav-link:hover {
             color: #ffdd57;
         }
+
+        /* Logo Positioning - Top left of the page, adjusted within video container */
         .logo {
-            width: 60px;
-            height: auto;
-        }
+    width: 80px;
+    height: auto;
+    position: absolute; /* Position it absolutely within the header */
+    left: 30%; /* Center it horizontally */
+    top: 7.5%; /* Adjust this value to control the vertical distance */
+    padding: 10px;
+}
+        /* Support Button Positioning - Top right of the page, adjusted within video container */
         .support-btn {
             font-size: 1.2rem;
             padding: 5px 15px;
+            position: absolute;
+            right: 30%;  
+            top: 14%;
+            padding: 10px;
         }
         .video-section {
             padding: 40px 0;

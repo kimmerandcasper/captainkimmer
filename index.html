@@ -36,12 +36,14 @@
         body {
             font-family: 'Arial', sans-serif;
             color: #333;
+            margin: 0;
+            padding: 0;
         }
     
         .header {
             background-color: #005f73;
             color: white;
-            padding: 40px 0;
+            padding: 20px 0;
             text-align: center;
             position: relative;
         }
@@ -59,7 +61,7 @@
         /* For the subtitle below the title */
         .subtitle {
             font-size: 1.5rem;
-            margin-top: 10px; /* Reduced space between title and subtitle */
+            margin-top: 10px;
         }
 
         .nav-divider {
@@ -84,24 +86,23 @@
             color: #ffdd57;
         }
 
-        /* Logo Positioning */
+        /* Logo Positioning - Top left of the page, adjusted within video container */
         .logo {
-            width: 60px;
-            height: auto;
-            position: absolute;
-            left: 5%; /* Move logo closer to the left edge of the screen */
-            top: 50%;
-            transform: translateY(-50%); /* Vertically center the logo */
-        }
-
-        /* Support Button Positioning */
+    width: 80px;
+    height: auto;
+    position: absolute; /* Position it absolutely within the header */
+    left: 30%; /* Center it horizontally */
+    top: 7.5%; /* Adjust this value to control the vertical distance */
+    padding: 10px;
+}
+        /* Support Button Positioning - Top right of the page, adjusted within video container */
         .support-btn {
             font-size: 1.2rem;
             padding: 5px 15px;
             position: absolute;
-            right: 5%; /* Move the support button closer to the right edge of the screen */
-            top: 50%;
-            transform: translateY(-50%); /* Vertically center the button */
+            right: 30%;  
+            top: 14%;
+            padding: 10px;
         }
 
         .video-section {
@@ -172,11 +173,9 @@
 <body>
 
     <header class="header">
-        <div class="header-content">
-            <img src="https://kimmerandcasper.github.io/captainkimmer/Favicons/favicon.ico" alt="Captain Kimmer Logo" class="logo">
-            <h1>Captain Kimmer</h1>
-            <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" class="btn btn-warning btn-lg support-btn d-none d-lg-inline">Support</a>
-        </div>
+        <img src="https://kimmerandcasper.github.io/captainkimmer/Favicons/favicon.ico" alt="Captain Kimmer Logo" class="logo">
+        <h1>Captain Kimmer</h1>
+        <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" class="btn btn-warning btn-lg support-btn d-none d-lg-inline">Support</a>
         <p class="subtitle">A Dangerous Nautical Comedy Adventure!</p>
         <hr class="nav-divider">
         <nav class="navbar navbar-expand-lg navbar-dark">
