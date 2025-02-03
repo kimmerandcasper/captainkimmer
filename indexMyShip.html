@@ -32,7 +32,7 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
-
+    
         body {
             font-family: 'Arial', sans-serif;
             color: #333;
@@ -116,7 +116,7 @@
         .footer .right-logo {
             right: 10px;
         }
-
+    
         /* ✅ Mobile-Specific Styling */
         @media (max-width: 768px) {
             .header-content {
@@ -143,7 +143,31 @@
                 padding: 30px 10px;
             }
         }
+    
+        /* Gallery Styles */
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    
+        .gallery-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px; /* Control the max height of images */
+            object-fit: cover; /* Ensure the aspect ratio is preserved */
+            border: 5px solid #fff; /* Add a border for better visibility */
+        }
+    
+        /* Mobile-Specific Styling for Images */
+        @media (max-width: 768px) {
+            .gallery-image {
+                max-height: 250px; /* Ensure smaller height on mobile */
+            }
+        }
     </style>
+    
 </head>
 <body>
     <header class="header">
@@ -285,6 +309,15 @@
         let currentIndex = 0;
         let currentGallery = exteriorImages;
     
+        // Preload all images
+        function preloadImages() {
+            let allImages = [...exteriorImages, ...interiorImages];
+            allImages.forEach(src => {
+                let img = new Image();
+                img.src = src;
+            });
+        }
+    
         // Load the gallery with images
         function loadGallery() {
             const galleryDiv = document.getElementById('gallery');
@@ -317,9 +350,11 @@
             loadGallery();
         });
     
-        // Initialize the gallery with exterior images
+        // Initialize the gallery with exterior images and preload all images
+        preloadImages();
         loadGallery();
     </script>
+    
     
 
     <footer class="footer">
