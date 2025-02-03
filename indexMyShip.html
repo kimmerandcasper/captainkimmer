@@ -315,24 +315,26 @@ const interiorImages = [
             });
         }
     
-        // Load the gallery with images
-        function loadGallery() {
-            const galleryDiv = document.getElementById('gallery');
-            galleryDiv.innerHTML = `<img src="${currentGallery[currentIndex]}" alt="Gallery Image" class="gallery-image">`;
-        }
-    
-        // Show next image
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % currentGallery.length;
-            loadGallery();
-        });
-    
-        // Show previous image
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-            loadGallery();
-        });
-    
+       // Load the gallery with images
+function loadGallery() {
+    const galleryDiv = document.getElementById('gallery');
+    galleryDiv.innerHTML = `<img src="${currentGallery[currentIndex]}" alt="Gallery Image" class="gallery-image">`;
+}
+
+// Show next image
+document.getElementById('nextBtn').addEventListener('click', (event) => {
+    event.preventDefault();  // Prevent the page jump
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    loadGallery();
+});
+
+// Show previous image
+document.getElementById('prevBtn').addEventListener('click', (event) => {
+    event.preventDefault();  // Prevent the page jump
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    loadGallery();
+});
+
         // Exterior Button Clicked
         document.getElementById('exteriorBtn').addEventListener('click', () => {
             currentGallery = exteriorImages;
