@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ✅ Favicon Links (Unchanged) -->
+    <link rel="icon" type="image/x-icon" href="/Favicons/favicon.ico">
+    <link rel="shortcut icon" href="/Favicons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/main/Favicons/favicon.ico">
+
+    <!-- ✅ Essential Meta Tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure! Join us for high-seas laughter, pirate performances, and unforgettable voyages.">
+    <meta name="keywords" content="Captain Kimmer, Nautical Comedy, Pirate Shows, High-Seas Adventure, Sunset Cruises, Ocean Fun">
+    <meta name="author" content="Captain Kimmer Team">
+    
+    <!-- ✅ Open Graph Tags for Social Media -->
+    <meta property="og:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
+    <meta property="og:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
+    <meta property="og:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
+    <meta property="og:url" content="https://CaptainKimmer.com">
+    <meta property="og:type" content="website">
+    
+    <!-- ✅ Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
+    <meta name="twitter:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
+    <meta name="twitter:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
+
+    <title>Captain Kimmer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .header {
+            background-color: #005f73;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .header h1 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 4rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+        .nav-divider {
+            width: 80%;
+            margin: 10px auto;
+            border: 0;
+            height: 1px;
+            background-color: white;
+        }
+        .navbar .nav-link {
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar .nav-link:hover {
+            color: #ffdd57;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+        .support-btn {
+            font-size: 1.2rem;
+            padding: 5px 15px;
+        }
+        .video-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .video-container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .video-container iframe {
+            border: 5px solid black;
+        }
+        .services, .contact, .support {
+            padding: 60px 20px;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+        }
+        .footer img {
+            position: absolute;
+            width: 80px;
+            bottom: 10px;
+        }
+        .footer .left-logo {
+            left: 10px;
+        }
+        .footer .right-logo {
+            right: 10px;
+        }
+
+        /* ✅ Mobile-Specific Styling */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+            }
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            .header p {
+                font-size: 1rem;
+            }
+            .logo {
+                width: 40px;
+                height: auto;
+            }
+            .video-container iframe {
+                width: 100%;
+                height: 250px;
+            }
+            .services, .contact, .support {
+                padding: 30px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <section id="kite-gallery" class="video-section">
+        <div class="container">
+            <h2>Kite</h2>
+    
+            <!-- Gallery Navigation -->
+            <div class="gallery-nav">
+                <button class="btn btn-dark" id="prevBtn">←</button>
+                <button class="btn btn-dark" id="nextBtn">→</button>
+            </div>
+    
+            <!-- Photo Gallery -->
+            <div id="gallery" class="photo-gallery">
+                <!-- Default Exterior Photos will be loaded here -->
+            </div>
+    
+            <!-- Exterior & Interior Buttons -->
+            <div class="gallery-buttons text-center">
+                <button class="btn btn-outline-dark" id="exteriorBtn">Exterior</button>
+                <button class="btn btn-outline-dark" id="interiorBtn">Interior</button>
+            </div>
+    
+            <!-- Description of Sparkman & Stephens 34 -->
+            <div class="description mt-4">
+                <h3>About the Sparkman & Stephens 34 (1970)</h3>
+                <p>The Sparkman & Stephens 34, a masterpiece from 1970, is a boat built for adventure. Known for its stunning beauty and unparalleled performance, the S&S 34 has proven itself on the open water for decades. Its sharp design and solid construction give it the agility of a racing yacht, while its interior comforts provide a cozy retreat for long voyages. Whether cruising in calm seas or braving the more challenging waters, this iconic vessel continues to turn heads and inspire sailors around the world.</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        const exteriorImages = [
+            "path-to-exterior-1.jpg",
+            "path-to-exterior-2.jpg",
+            "path-to-exterior-3.jpg",
+            // Add more exterior images here
+        ];
+    
+        const interiorImages = [
+            "path-to-interior-1.jpg",
+            "path-to-interior-2.jpg",
+            "path-to-interior-3.jpg",
+            // Add more interior images here
+        ];
+    
+        let currentIndex = 0;
+        let currentGallery = exteriorImages;
+    
+        // Load the gallery with images
+        function loadGallery() {
+            const galleryDiv = document.getElementById('gallery');
+            galleryDiv.innerHTML = `<img src="${currentGallery[currentIndex]}" alt="Gallery Image" class="gallery-image">`;
+        }
+    
+        // Show next image
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            loadGallery();
+        });
+    
+        // Show previous image
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            loadGallery();
+        });
+    
+        // Exterior Button Clicked
+        document.getElementById('exteriorBtn').addEventListener('click', () => {
+            currentGallery = exteriorImages;
+            currentIndex = 0;
+            loadGallery();
+        });
+    
+        // Interior Button Clicked
+        document.getElementById('interiorBtn').addEventListener('click', () => {
+            currentGallery = interiorImages;
+            currentIndex = 0;
+            loadGallery();
+        });
+    
+        // Initialize the gallery with exterior images
+        loadGallery();
+    </script>
+
+    <footer class="footer">
+        <p>&copy; 2024 Captain Kimmer's Nautical Comedy Adventure. All Rights Reserved.</p>
+        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/main/CaptainKimmerLogo.png" alt="Captain Kimmer Logo" class="left-logo">
+        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/main/CaptainKimmerLogo.png" alt="Captain Kimmer Logo" class="right-logo">
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
