@@ -148,26 +148,31 @@
         }
 
         .footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-        }
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
 
-        .footer img {
-            position: absolute;
-            width: 80px;
-            bottom: 10px;
-        }
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-        .footer .left-logo {
-            left: 10px;
-        }
+.footer h2,
+.footer p {
+    margin: 5px 0; /* Ensures spacing between the elements */
+}
 
-        .footer .right-logo {
-            right: 10px;
-        }
+.footer-logo {
+    width: 100px;  /* You can adjust the size of the logo */
+    margin-top: 20px;
+}
 
         .navbar-nav .nav-item {
     margin-left: 20px; /* Adjust the value to your preference */
@@ -238,6 +243,11 @@
     .navbar-nav .nav-item {
     margin-left: 0px; /* Adjust the value to your preference */
 }
+
+.footer-logo {
+        width: 80px; /* Adjust the logo size for mobile if needed */
+    }
+    
  
     .belowHeader {
     padding-top: 50%;  /* Same effect as margin-top, pushes down the content */
