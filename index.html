@@ -169,8 +169,14 @@
                 padding: 30px 10px;
             }
             .support-btn {
-                right: 5%;
-            }
+        font-size: 1.2rem;
+        right: auto;  /* Reset the right property */
+        left: 50%;    /* Center it horizontally */
+        transform: translateX(-50%);  /* Offset it to perfectly center */
+        position: absolute;  /* Maintain its absolute position */
+        top: 50%;    /* Adjust vertical positioning */
+        transform: translate(-50%, -50%);  /* Center it both horizontally and vertically */
+    }
         }
     </style>
 </head>
