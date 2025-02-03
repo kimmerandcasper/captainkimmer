@@ -179,15 +179,16 @@
     }
 
      /* Center the support button on mobile */
-     
+
      .support-btn {
         font-size: 1.2rem;
         padding: 5px 15px;
-        position: fixed;
-        left: 50%; /* Center the button horizontally */
-        transform: translateX(-50%); /* Adjust horizontally by half of its own width */
-        top: 60%; /* Adjust the vertical position as needed */
-        z-index: 1050; /* Ensure it stays above other content */
+        position: fixed;  /* Position it fixed to the viewport */
+        left: 50%;  /* Center it horizontally */
+        transform: translateX(-50%);  /* Adjust the button to the exact center */
+        top: 60%; /* Adjust vertical position */
+        z-index: 1050;  /* Ensure it is above other content */
+        display: block;  /* Make sure it's visible on mobile */
     }
 
         }
