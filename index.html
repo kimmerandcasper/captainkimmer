@@ -180,18 +180,11 @@
         transform: translateY(0); /* No vertical offset */
         z-index: 1050;  /* Make sure it stays on top of other elements */
     }
-
-     /* Center the support button on mobile */
-
-     .support-btn {
-        font-size: 1.2rem;
-        padding: 5px 15px;
-        position: fixed;  /* Fixed positioning to stay in place */
-        left: 50%;        /* Center horizontally */
-        transform: translateX(-50%);  /* Center the button */
-        top: 60%;         /* Adjust vertical position */
-        z-index: 1050;    /* Ensure it stays above other content */
-        }
+    .mobile-support-btn {
+        display: inline-block; /* Ensure it's inline to allow centering */
+        margin: 10px auto; /* Add margin to center it */
+    }
+   
     }
     </style>
 </head>
