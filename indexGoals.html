@@ -252,17 +252,29 @@
 }
 
 .dream-list {
-        font-size: 0.5rem; /* Smaller font size for mobile */
-        margin-left: -40; /* Make the list start from the left */
-        padding-left: -20px; /* Optional: space from the left edge */
-        left: 0%;
+        font-size: 1.5rem;  /* Adjusted font size to make it more readable on mobile */
+        margin-left: 0;      /* Ensure no extra margin on the left */
+        padding-left: 0;     /* Ensure no padding on the left */
     }
 
-    .dream-list ul {
-        font-size: 0.5rem; /* Smaller font size for mobile */
-        margin-left: 0; /* Ensure no extra margin */
-        left: 0%;
+    /* Remove margin/padding from ul and ol */
+    .dream-list ul,
+    .dream-list ol {
+        margin-left: 0; /* Remove left margin */
+        padding-left: 0; /* Remove left padding */
     }
+
+    /* Ensure the list items start from the very left */
+    .dream-list li {
+        text-align: left; /* Left-align the list items */
+        padding-left: 0; /* Remove padding */
+        margin-left: 0; /* Remove margin */
+    }
+
+    /* Optional: Make the font size smaller for mobile */
+    .dream-list li {
+    font-size: 1.2rem;  /* Adjust the font size further if needed */
+}
 
     .belowHeader {
     padding-top: 50%;  /* Same effect as margin-top, pushes down the content */
