@@ -280,9 +280,25 @@
     <header class="header">
         <!-- Logo -->
         <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
-            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/BuyMeADrink.png" 
-                 alt="Captain Kimmer Logo" class="logo">
+            <img id="animatedBeerJS" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" 
+                 alt="Buy Me a Drink" class="logo">
         </a>
+        
+        <script>
+            const beerImages = [
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
+            ];
+            
+            let index = 0;
+            function animateBeer() {
+                document.getElementById("animatedBeerJS").src = beerImages[index];
+                index = (index + 1) % beerImages.length;
+            }
+        
+            setInterval(animateBeer, 300); // Change every 300ms
+        </script>
         <h1>Captain Kimmer</h1>
         <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" 
            class="btn btn-warning btn-lg support-btn d-none d-lg-inline">
