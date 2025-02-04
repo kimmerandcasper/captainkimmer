@@ -310,6 +310,31 @@
         width: 80px; /* Adjust the logo size for mobile if needed */
     }
 
+
+    /* Smaller Header for Mobile */
+    .header {
+        padding: 5px 0; /* Even less padding on mobile */
+    }
+
+    /* Adjust Social Icons & Support Button for Mobile */
+    .social-icons {
+        flex-wrap: wrap; /* Ensures proper alignment on small screens */
+        gap: 5px; /* Smaller gap for mobile */
+    }
+
+    /* Resize Social Icons on Mobile */
+    .social-logo {
+        width: 30px; /* Smaller size for mobile */
+        padding: 2px;
+    }
+
+    /* Adjust Support Button Size for Mobile */
+    .support-btn {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+
+
  
     .belowHeader {
     padding-top: 60%;  /* Same effect as margin-top, pushes down the content */
@@ -323,11 +348,12 @@
 <body>
     
     <header class="header">
+        <!-- Animated Beer (Buy Me a Drink) -->
         <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
             <img id="animatedBeerJS" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" 
                  alt="Buy Me a Drink" class="logo">
         </a>
-        
+    
         <script>
             const beerImages = [
                 "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
@@ -343,39 +369,40 @@
         
             setInterval(animateBeer, 300); // Change every 300ms
         </script>
-        
+    
+        <!-- Website Title -->
         <h1>Captain Kimmer</h1>
-        <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" 
-           class="btn btn-warning btn-lg support-btn d-none d-lg-inline">
-           Support
-        </a>
-        
+    
+        <!-- Subtitle -->
         <p class="subtitle">A Dangerous Nautical Comedy Adventure!</p>
     
-        <!-- Social Media Icons Section -->
+        <!-- Social Media Icons & Support Button -->
         <div class="social-icons">
-            <!-- Patreon (First Icon) -->
+            <!-- Patreon -->
             <a href="https://patreon.com/captainkimmer?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank">
                 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/PatreonLogo.png" alt="Patreon" class="social-logo">
             </a>
-            <!-- Instagram (Second Icon) -->
+            <!-- Instagram -->
             <a href="https://www.instagram.com/captainkimmer92/" target="_blank">
                 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/InstagramLogo.png" alt="Instagram" class="social-logo">
             </a>
-            <!-- YouTube (Third Icon) -->
+            <!-- YouTube -->
             <a href="http://www.youtube.com/@CaptainKimmer" target="_blank">
                 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/YoutubeLogo.png" alt="YouTube" class="social-logo">
             </a>
+            <!-- Support Button (Next to Social Icons) -->
+            <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" class="btn btn-warning support-btn">Support</a>
         </div>
     
         <hr class="nav-divider">
+    
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <div class="mobile-nav d-flex d-lg-none">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" class="btn btn-warning mobile-support-btn">Support</a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
@@ -391,6 +418,7 @@
             </div>
         </nav>
     </header>
+    
     
 
     <div class="belowHeader"></div>
