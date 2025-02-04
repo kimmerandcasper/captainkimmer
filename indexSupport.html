@@ -168,6 +168,31 @@
     font-weight: bold; /* Optional: make it bold to highlight */
 }
 
+/* Social Icons Styling */
+.social-icons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    border: 2px solid black; /* Black border added */
+    border-radius: 5px; /* Optional: Rounds the corners slightly */
+    padding: 3px; /* Adds space inside the border */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.social-logo:hover {
+    transform: scale(1.2);
+    border-color: #ffdd57; /* Changes border color on hover (optional) */
+}
+
 
         .belowHeader {
     padding-top: 16%;  /* Same effect as margin-top, pushes down the content */
@@ -245,57 +270,76 @@
 
 <body>
 
-<header class="header">
-    <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
-        <img id="animatedBeerJS" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" 
-             alt="Buy Me a Drink" class="logo">
-    </a>
-    
-    <script>
-        const beerImages = [
-            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
-            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
-            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
-        ];
+    <header class="header">
+        <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
+            <img id="animatedBeerJS" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" 
+                 alt="Buy Me a Drink" class="logo">
+        </a>
         
-        let index = 0;
-        function animateBeer() {
-            document.getElementById("animatedBeerJS").src = beerImages[index];
-            index = (index + 1) % beerImages.length;
-        }
+        <script>
+            const beerImages = [
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
+            ];
+            
+            let index = 0;
+            function animateBeer() {
+                document.getElementById("animatedBeerJS").src = beerImages[index];
+                index = (index + 1) % beerImages.length;
+            }
+        
+            setInterval(animateBeer, 300); // Change every 300ms
+        </script>
+        
+        <h1>Captain Kimmer</h1>
+        <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" 
+           class="btn btn-warning btn-lg support-btn d-none d-lg-inline">
+           Support
+        </a>
+        
+        <p class="subtitle">A Dangerous Nautical Comedy Adventure!</p>
     
-        setInterval(animateBeer, 300); // Change every 300ms
-    </script>
-    <h1>Captain Kimmer</h1>
-    <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" 
-       class="btn btn-warning btn-lg support-btn d-none d-lg-inline">
-       Support
-    </a>
-    
-    <p class="subtitle">A Dangerous Nautical Comedy Adventure!</p>
-    <hr class="nav-divider">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <div class="mobile-nav d-flex d-lg-none">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" class="btn btn-warning mobile-support-btn">Support</a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMyShip.html">My Ship</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexGoals.html">The Dream</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexVideos.html">Videos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexBlog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMap.html">Map</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexContact.html">Contact</a></li>
-                </ul>
-            </div>
+        <!-- Social Media Icons Section -->
+        <div class="social-icons">
+            <!-- Patreon (First Icon) -->
+            <a href="https://patreon.com/captainkimmer?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/PatreonLogo.png" alt="Patreon" class="social-logo">
+            </a>
+            <!-- Instagram (Second Icon) -->
+            <a href="https://www.instagram.com/captainkimmer92/" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/InstagramLogo.png" alt="Instagram" class="social-logo">
+            </a>
+            <!-- YouTube (Third Icon) -->
+            <a href="http://www.youtube.com/@CaptainKimmer" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/YoutubeLogo.png" alt="YouTube" class="social-logo">
+            </a>
         </div>
-    </nav>
-</header>
+    
+        <hr class="nav-divider">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <div class="mobile-nav d-flex d-lg-none">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" class="btn btn-warning mobile-support-btn">Support</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMyShip.html">My Ship</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexGoals.html">The Dream</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexVideos.html">Videos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexBlog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMap.html">Map</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexContact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
 
 
 <div class="belowHeader">
