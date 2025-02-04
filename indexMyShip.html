@@ -296,16 +296,6 @@
         width: 100%;
         text-align: center;
     }
-
-    .mobile-support-btn {
-        display: inline-block; /* Ensure it's inline to allow centering */
-        margin: 1px auto; /* Add margin to center it */
-        font-size: 0.9rem;
-        padding: 4px 8px;
-        top: 20%;
-        left: 0%;
-    }
-
      
 
     .navbar-nav .nav-item {
@@ -322,20 +312,35 @@
         padding: 5px 0; /* Even less padding on mobile */
     }
 
-    /* Adjust Social Icons & Support Button for Mobile */
-    .social-icons {
-        flex-wrap: wrap; /* Ensures proper alignment on small screens */
-        gap: 5px; /* Smaller gap for mobile */
+   /* Social Icons & Support Button Layout */
+   .social-icons {
+        display: flex;
+        justify-content: center; /* Center icons & button */
+        align-items: center;
+        gap: 8px; /* Adds spacing between elements */
     }
 
-    /* Resize Social Icons on Mobile */
+    /* Social Media Logos */
     .social-logo {
-        width: 30px; /* Smaller size for mobile */
+        width: 30px;  /* Same height & width for uniformity */
+        height: 30px;
         padding: 2px;
+        border: 2px solid black;
+        border-radius: 5px;
     }
 
-  
-
+    /* Support Button Styling - Same Height as Social Icons */
+    .mobile-support-btn {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        height: 34px; /* Matches social icon height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        white-space: nowrap;
+        border-radius: 5px;
+    }
 
  
     .belowHeader {
