@@ -193,6 +193,24 @@
             border: 5px solid #fff; /* Add a border for better visibility */
         }
 
+        /* Centered button layout with correct spacing */
+.gallery-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adds spacing between buttons */
+}
+
+.gallery-buttons .btn {
+    font-size: 1rem;
+    padding: 8px 15px;
+}
+
+/* Slightly increase arrow button size */
+#prevBtn, #nextBtn {
+    font-size: 1.2rem;
+}
+
         .navbar-nav .nav-item {
     margin-left: 20px; /* Adjust the value to your preference */
 }
@@ -380,12 +398,6 @@
         <div class="container">
             <h2>Kite</h2>
     
-            <!-- Gallery Navigation -->
-            <div class="gallery-nav">
-                <button class="btn btn-dark" id="prevBtn">←</button>
-                <button class="btn btn-dark" id="nextBtn">→</button>
-            </div>
-    
             <!-- Photo Gallery -->
             <div id="gallery" class="photo-gallery">
                 <!-- Default Exterior Photos will be loaded here -->
@@ -393,8 +405,10 @@
     
             <!-- Exterior & Interior Buttons -->
             <div class="gallery-buttons text-center">
+                <button class="btn btn-dark" id="prevBtn">←</button>
                 <button class="btn btn-outline-dark" id="exteriorBtn">Exterior</button>
                 <button class="btn btn-outline-dark" id="interiorBtn">Interior</button>
+                <button class="btn btn-dark" id="nextBtn">→</button>
             </div>
     
             <!-- Description of Sparkman & Stephens 34 -->
