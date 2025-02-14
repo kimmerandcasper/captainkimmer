@@ -371,10 +371,12 @@
                 let currentDate = new Date(startDate);
                 let logEntriesHTML = '';
         
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        
                 while (currentDate <= endDate) {
-                    const formattedDate = currentDate.toISOString().split('T')[0];
-                    let title = formattedDate === '2025-02-15' ? 'The Ship (Kite)' :
-                                 formattedDate === '2025-02-16' ? 'The Ship (Kite) II' : 'TBD';
+                    const formattedDate = currentDate.toLocaleDateString('en-US', options);
+                    let title = formattedDate === '2025 February 15' ? 'The Ship (Kite)' :
+                                 formattedDate === '2025 February 16' ? 'The Ship (Kite) II' : 'TBD';
                     logEntriesHTML += `<div class="log-entry">
                         <span class="date">${formattedDate}</span> - ${title}
                     </div>`;
