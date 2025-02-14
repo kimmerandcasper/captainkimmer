@@ -346,7 +346,7 @@
                         <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMyShip.html">My Ship</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexGoals.html">The Dream</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexVideos.html">Videos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexBlog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexBlog.html">Captain's Log</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMap.html">Map</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexContact.html">Contact</a></li>
                     </ul>
@@ -360,10 +360,28 @@
 <div class="belowHeader">
     <section id="featured-video" class="video-section">
         <div class="container">
-            <h2>Welcome Video!</h2>
-            <div class="video-container">
-                <iframe width="100%" height="450" src="https://www.youtube.com/embed/0RO08D2wvTk?rel=0&modestbranding=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
-            </div>
+            <h2>Captain's Log</h2>
+            <main class="container">
+                <div id="log-entries"></div>
+            </main>
+        
+            <script>
+                const startDate = new Date('2025-02-15');
+                const endDate = new Date('2025-05-15');
+                let currentDate = new Date(startDate);
+                let logEntriesHTML = '';
+        
+                while (currentDate <= endDate) {
+                    const formattedDate = currentDate.toISOString().split('T')[0];
+                    let title = formattedDate === '2025-02-15' ? 'The Ship (Kite)' :
+                                 formattedDate === '2025-02-16' ? 'The Ship (Kite) II' : 'TBD';
+                    logEntriesHTML += `<div class="log-entry">
+                        <span class="date">${formattedDate}</span> - ${title}
+                    </div>`;
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
+                document.getElementById('log-entries').innerHTML = logEntriesHTML;
+            </script>
         </div>
     </section>
 
