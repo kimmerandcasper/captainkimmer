@@ -412,31 +412,29 @@
     
     <!-- Google Maps API -->
     <script async src="https://maps.googleapis.com/maps/api/js?v=3.52&key=AIzaSyA55lSXbX4OXBCUBuSoEN9OyMFff7qVYaQ&callback=initMap"></script>
+
     <script>
         function initMap() {
+            // Create the map centered on Chichester, United Kingdom
             const map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: 0, lng: 0 },
-                zoom: 2,
+                center: { lat: 50.836, lng: -0.7801 }, // Chichester coordinates
+                zoom: 10, // Zoom level suitable for viewing Chichester
             });
     
-            const locations = [
-                { lat: 37.7749, lng: -122.4194, title: "San Francisco" },
-                { lat: 51.5074, lng: -0.1278, title: "London" }
-            ];
-    
-            locations.forEach(({ lat, lng, title }) => {
-                new google.maps.Marker({
-                    position: { lat, lng },
-                    map,
-                    title,
-                });
+            // Single Marker for Chichester: "The Start"
+            new google.maps.Marker({
+                position: { lat: 50.836, lng: -0.7801 },
+                map: map,
+                title: "The Start - Chichester, United Kingdom"
             });
         }
     
+        // Error handling for Google Maps loading issues
         window.onerror = function() {
             alert('Map failed to load. Please try again later.');
         };
     </script>
+    
 </body>
 
 </html>
