@@ -157,6 +157,28 @@
     bottom: 0;
 }
 
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row on desktop */
+    gap: 10px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.photo-grid img {
+    width: 100%;
+    max-width: 300px; /* Ensures uniform size */
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 image per row on mobile */
+    }
+}
+
 .footer-content {
     display: flex;
     flex-direction: column;
@@ -210,7 +232,7 @@
 
           
         .belowHeader {
-    padding-top: 19%;  /* Same effect as margin-top, pushes down the content */
+    padding-top: 22%;  /* Same effect as margin-top, pushes down the content */
 }
 
 
@@ -358,73 +380,47 @@
 
 
 <div class="belowHeader">
-  
-    
-    <section id="featured-video" class="video-section">
-        <div class="container">
-            <h2 style="text-align: center;">Captain's Log</h2>
-    
-            <!-- Centered Button: All Photos -->
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="https://kimmerandcasper.github.io/captainkimmer/indexBlog_AllPhotos.html" class="btn btn-primary btn-lg">All Photos</a>
-            </div>
-    
-            <!-- Left-Justified Page Description -->
-            <div style="max-width: 800px; margin: 20px auto 0; text-align: left; font-size: 1.1rem;">
-                <p style="text-align: center; font-weight: bold;">Welcome to the Captain's Log</p>
-                <p>
-                    This is where a very succinct description of Captain Kimmer's nautical adventures resides. 
-                    There are lots of screenshots from the adventures, and the "All Photos" button above 
-                    contains every image from every adventure. 
-                </p>
-                <p>
-                    Feel free to click a button and read about the fun I, Captain Kimmer, have had hanging on for dear life 
-                    while I voyage out onto the ocean—having never sailed a ship a day in my life. Enjoy!
-                </p>
-            </div>
-    
-            <!-- Centered UK-Themed Button: THE BEGINNING - BUYING THE SHIP -->
-            <div style="text-align: center; margin-top: 15px;">
-                <a href="https://kimmerandcasper.github.io/captainkimmer/indexBlog_01_TheBeginning.html" 
-                   class="btn btn-lg" 
-                   style="display: block; padding: 20px; max-width: 600px; /* Increased width */
-                          margin: 0 auto; background: linear-gradient(90deg, #00247D 33%, #FFFFFF 33%, #FFFFFF 66%, #CF142B 66%);
-                          color: black; font-weight: 900; font-size: 1.3rem; border: 2px solid #00247D;
-                          text-align: center;">
-                    
-                    <!-- Large Title: Black Font + White Box with Black Outline -->
-                    <div style="font-size: 1.5rem; font-weight: 900; background: white; color: black;
-                                padding: 5px 10px; border-radius: 5px; display: inline-block;
-                                border: 3px solid black;">
-                        THE BEGINNING - BUYING THE SHIP!
-                    </div>
-    
-                    <!-- Smaller Subtitle: Chichester, United Kingdom -->
-                    <div style="font-size: 1rem; font-weight: 800; background: white; color: black;
-                                padding: 5px 10px; border-radius: 5px; display: inline-block; margin-top: 5px;
-                                border: 3px solid black;">
-                        Chichester, United Kingdom
-                    </div>
-    
-                    <!-- Image Container -->
-                    <div style="display: flex; justify-content: center; gap: 5px; margin-top: 8px;">
-                        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/LeavingAirport.png" 
-                             alt="Leaving Airport" style="width: 30%; height: auto; border-radius: 5px;">
-                        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0563.jpg" 
-                             alt="Chichester Arrival" style="width: 30%; height: auto; border-radius: 5px;">
-                        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0622.jpg" 
-                             alt="Kite in Chichester" style="width: 30%; height: auto; border-radius: 5px;">
-                    </div>
-    
-                    <!-- Date Below Images -->
-                    <div style="font-size: 1rem; font-weight: 900; background: white; color: black;
-                                padding: 5px 10px; border-radius: 5px; display: inline-block; margin-top: 8px;">
-                        02 / 14 / 2025
-                    </div>
-                </a>
-            </div>
+
+    <div class="container">
+        <h2 style="text-align: center; margin-top: 20px;">All Photos</h2>
+        <div class="photo-grid">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0556.jpg" alt="IMG_0556">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0557.jpg" alt="IMG_0557">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0558.jpg" alt="IMG_0558">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0559.jpg" alt="IMG_0559">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0560.jpg" alt="IMG_0560">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0561.jpg" alt="IMG_0561">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0562.jpg" alt="IMG_0562">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0563.jpg" alt="IMG_0563">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0564.jpg" alt="IMG_0564">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0565.jpg" alt="IMG_0565">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0566.jpg" alt="IMG_0566">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0568.jpg" alt="IMG_0568">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0569.jpg" alt="IMG_0569">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0570.jpg" alt="IMG_0570">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0571.jpg" alt="IMG_0571">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0572.jpg" alt="IMG_0572">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0573.jpg" alt="IMG_0573">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0574.jpg" alt="IMG_0574">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0575.jpg" alt="IMG_0575">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0576.jpg" alt="IMG_0576">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0577.jpg" alt="IMG_0577">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0578.jpg" alt="IMG_0578">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0579.jpg" alt="IMG_0579">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0580.jpg" alt="IMG_0580">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0581.jpg" alt="IMG_0581">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0582.jpg" alt="IMG_0582">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0583.jpg" alt="IMG_0583">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0584.jpg" alt="IMG_0584">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0585.jpg" alt="IMG_0585">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0586.jpg" alt="IMG_0586">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0587.jpg" alt="IMG_0587">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0588.jpg" alt="IMG_0588">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0589.jpg" alt="IMG_0589">
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/TheBigginingChichester/IMG_0590.jpg" alt="IMG_0590">
         </div>
-    </section>
+    </div>
+    
     
     
         
