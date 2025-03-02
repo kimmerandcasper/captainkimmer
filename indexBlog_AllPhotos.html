@@ -175,7 +175,7 @@
 
     .photo-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Default to 3 images per row */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Automatically adjusts for screen size */
     gap: 20px;
     padding: 20px;
     justify-content: center; /* Centering the grid */
