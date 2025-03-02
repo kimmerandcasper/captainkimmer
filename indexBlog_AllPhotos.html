@@ -175,13 +175,11 @@
 
     /* Ensure images appear only above or below the headings */
     .photo-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row on large screens */
+    gap: 20px;
+    padding: 20px;
+}
 
     .photo-grid img {
         width: 100%;
@@ -195,6 +193,14 @@
     .photo-grid {
         grid-template-columns: repeat(1, 1fr); /* 1 image per row on mobile */
     }
+}
+
+.photo-grid img {
+    width: 100%;
+    max-width: 600px; /* Adjust image width */
+    height: auto;
+    border-radius: 5px;
+    display: block;
 }
 
 .footer-content {
@@ -689,7 +695,7 @@
 
     </div class="photo-section"></div>
 
-                
+    
         </div>
     </div>
     
