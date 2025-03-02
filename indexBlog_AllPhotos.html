@@ -157,21 +157,39 @@
     bottom: 0;
 }
 
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 images per row on desktop */
-    gap: 10px;
-    padding: 20px;
-    justify-items: center;
-}
+  /* Ensure all headings are centered and on their own line */
+  .photo-section {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
 
-.photo-grid img {
-    width: 100%;
-    max-width: 300px; /* Ensures uniform size */
-    height: auto;
-    border-radius: 5px;
-    display: block;
-}
+    .photo-section h2 {
+        display: block; /* Force heading onto its own line */
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    /* Ensure images appear only above or below the headings */
+    .photo-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .photo-grid img {
+        width: 100%;
+        max-width: 600px; /* Adjust image width */
+        height: auto;
+        border-radius: 5px;
+        display: block;
+    }
 
 @media (max-width: 768px) {
     .photo-grid {
@@ -384,6 +402,7 @@
     <div class="container">
         <h2 style="text-align: center; margin-top: 20px;">All Photos</h2>
         <div class="photo-grid">
+            <div class="photo-section"></div>
             <h2 style="text-align: center; margin-top: 20px;">The Beginning</h2>
             <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/LeavingAirport.png" alt="IMG_0556">
                 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0558.jpg" alt="IMG_0558">
@@ -453,8 +472,8 @@
 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0624.jpg" alt="IMG_0624">
 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0625.jpg" alt="IMG_0625">
 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0626.jpg" alt="IMG_0626">
-            
-
+        </div class="photo-section">
+        <div class="photo-section">
 <h2 style="text-align: center; margin-top: 20px;">Across The English Channel</h2>
 
             <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0632.jpg" alt="IMG_0632">
@@ -549,7 +568,8 @@
 
                 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0964.jpg" alt="IMG_0964">
 
-
+        </div class="photo-section">
+        <div class="photo-section"></div>
                 <h2 style="text-align: center; margin-top: 20px;">Cherbourg to Brest</h2>
 
                 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0964.jpg" alt="IMG_0965">                
@@ -667,7 +687,7 @@
 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1088.jpg" alt="IMG_1088">
 <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1089.jpg" alt="IMG_1089">
 
-
+    </div class="photo-section"></div>
 
                 
         </div>
