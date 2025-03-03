@@ -229,6 +229,11 @@
     padding-top: 19%;  /* Same effect as margin-top, pushes down the content */
 }
 
+#map {
+            height: 500px;
+            width: 100%;
+        }
+
 
         /* ✅ Mobile-Specific Styling */
         @media (max-width: 768px) {
@@ -415,24 +420,44 @@
 
     <script>
         function initMap() {
-            // Create the map centered on Chichester, United Kingdom
+            // Initialize the map centered at a mid-point
             const map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: 50.836, lng: -0.7801 }, // Chichester coordinates
-                zoom: 10, // Zoom level suitable for viewing Chichester
+                zoom: 5,
+                center: { lat: 50.0, lng: -10.0 }, // Center in the Atlantic for best view
+                mapTypeId: "hybrid"
             });
-    
-            // Single Marker for Chichester: "The Start"
-            new google.maps.Marker({
-                position: { lat: 50.836, lng: -0.7801 },
-                map: map,
-                title: "The Start - Chichester, United Kingdom"
+
+            // Define travel path with coordinates
+            const travelPathCoordinates = [
+                { lat: 46.2856, lng: -119.2845 },  // Richland, WA, USA
+                { lat: 51.4700, lng: -0.4543 },    // Heathrow Airport, London, UK
+                { lat: 50.8033, lng: -0.9025 },    // Itchenor Sailing Club, Chichester, UK
+                { lat: 50.7964, lng: -0.9194 },    // East Head, Chichester Harbour, UK
+                { lat: 50.7975, lng: -0.9198 },    // Sparks Marina, UK
+                { lat: 49.6331, lng: -1.6221 },    // Cherbourg, France
+                { lat: 48.3904, lng: -4.4861 }     // Brest, France
+            ];
+
+            // Create a polyline to show the travel path
+            const travelPath = new google.maps.Polyline({
+                path: travelPathCoordinates,
+                geodesic: true,
+                strokeColor: "#FF0000",
+                strokeOpacity: 1.0,
+                strokeWeight: 4
+            });
+
+            travelPath.setMap(map);
+
+            // Add markers for each location
+            travelPathCoordinates.forEach((location, index) => {
+                new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    title: `Stop ${index + 1}`
+                });
             });
         }
-    
-        // Error handling for Google Maps loading issues
-        window.onerror = function() {
-            alert('Map failed to load. Please try again later.');
-        };
     </script>
     
 </body>
