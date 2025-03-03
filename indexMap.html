@@ -402,21 +402,19 @@
     
     <!-- Active Navbar Link Highlighting -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const currentPath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.navbar .nav-link');
-        
-            navLinks.forEach(link => {
-                if ((currentPath === '/' && link.href === 'https://captainkimmer.com/') || 
-                    link.href.includes(currentPath)) {
-                    link.classList.add('active');
-                }
-            });
-        });
+       document.addEventListener("DOMContentLoaded", () => {
+    const currentURL = window.location.href;
+    document.querySelectorAll('.navbar .nav-link').forEach(link => {
+        if (currentURL === link.href || currentURL.includes(link.href)) {
+            link.classList.add('active');
+        }
+    });
+});
     </script>
     
     <!-- Google Maps API -->
-    <script async src="https://maps.googleapis.com/maps/api/js?v=3.52&key=AIzaSyA55lSXbX4OXBCUBuSoEN9OyMFff7qVYaQ&callback=initMap"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA55lSXbX4OXBCUBuSoEN9OyMFff7qVYaQ" onload="initMap()"></script>
+
 
     <script>
         function initMap() {
