@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><head>
+    <!-- ✅ Favicon Links (Unchanged) -->
+  <link rel="icon" type="image/x-icon" href="/Favicons/favicon.ico">
+  <link rel="shortcut icon" href="/Favicons/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Favicons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/main/Favicons/favicon.ico">
+  
+  <!-- ✅ Essential Meta Tags for SEO -->
+  <meta charset="UTF-8">
+  <meta name="description" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure! Join us for high-seas laughter, pirate performances, and unforgettable voyages.">
+  <meta name="keywords" content="Captain Kimmer, Nautical Comedy, Pirate Shows, High-Seas Adventure, Sunset Cruises, Ocean Fun">
+  <meta name="author" content="Captain Kimmer Team">
+  
+  <!-- ✅ Phone Orientation Hold Portrait -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  
+  <!-- ✅ Open Graph Tags for Social Media -->
+  <meta property="og:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
+  <meta property="og:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
+  <meta property="og:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
+  <meta property="og:url" content="https://CaptainKimmer.com">
+  <meta property="og:type" content="website">
+  
+  <!-- ✅ Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
+  <meta name="twitter:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
+  <meta name="twitter:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
+  
+  <!-- Lock portrait mode -->
+  <script>
+      if (window.innerHeight > window.innerWidth) {
+          document.body.classList.add("portrait");
+      } else {
+          document.body.classList.remove("portrait");
+      }
+  
+      window.addEventListener('resize', function() {
+          if (window.innerHeight > window.innerWidth) {
+              document.body.classList.add("portrait");
+          } else {
+              document.body.classList.remove("portrait");
+          }
+      });
+  </script>
+     
+    <title>Captain Kimmer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+    
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .header {
+            background-color: #005f73;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            left: 0%;
+            width: 100%;
+            position: fixed;
+        }
+
+        /* Title centered */
+        .header h1 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 4rem;
+            transform: translate(-50%, -50%);  /* Shift the element back by half of its own width and height */
+            left: 50%;
+            top: 7.5%;
+            position: fixed;
+            z-index: 1;
+        }
+
+        /* For the subtitle below the title */
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 80px;
+        }
+
+        .nav-divider {
+            width: 80%;
+            margin: 10px auto;
+            border: 0;
+            height: 1px;
+            background-color: white;
+        }
+
+        .navbar {
+            margin-top: 5px;
+        }
+
+        .navbar .nav-link {
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffdd57;
+        }
+
+        /* Logo Positioning - Top left of the page, adjusted within video container */
+        .logo {
+    width: 80px;
+    height: auto;
+    position: absolute; /* Position it absolutely within the header */
+    left: 30%; /* Center it horizontally */
+    top: 8%; /* Adjust this value to control the vertical distance */
+    padding: 10px;
+}
+        /* Support Button Positioning - Top right of the page, adjusted within video container */
+        .support-btn {
+            font-size: 1.2rem;
+            padding: 5px 15px;
+            position: absolute;
+            right: 29%;  
+            top: 15%;
+            padding: 10px;
+        }
+
+        .video-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .video-container iframe {
+            border: 5px solid black;
+        }
+
+        .services, .contact, .support {
+            padding: 60px 20px;
+        }
+
+        .footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row on desktop */
+    gap: 10px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.photo-grid img {
+    width: 100%;
+    max-width: 300px; /* Ensures uniform size */
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 image per row on mobile */
+    }
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer h2,
+.footer p {
+    margin: 5px 0; /* Ensures spacing between the elements */
+}
+
+.footer-logo {
+    width: 100px;  /* You can adjust the size of the logo */
+    margin-top: 20px;
+}
+
+        .navbar-nav .nav-item {
+    margin-left: 20px; /* Adjust the value to your preference */
+}
+
+.navbar .nav-link.active {
+    text-decoration: underline;
+    font-weight: bold; /* Optional: make it bold to highlight */
+}
+
+/* Social Icons Styling */
+.social-icons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    border: 2px solid black; /* Black border added */
+    border-radius: 5px; /* Optional: Rounds the corners slightly */
+    padding: 3px; /* Adds space inside the border */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.social-logo:hover {
+    transform: scale(1.2);
+    border-color: #ffdd57; /* Changes border color on hover (optional) */
+}
+
+        .belowHeader {
+    padding-top: 11%;  /* Same effect as margin-top, pushes down the content */
+}
+
+        /* ✅ Mobile-Specific Styling */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .logo {
+        width: 70px;
+        position: fixed;  /* Fix the logo in place */
+        left: 5%;  /* Move it slightly from the left edge */
+        top: 2%;  /* Adjust vertical position */
+        transform: translateY(0); /* No vertical offset */
+        z-index: 1049;  /* Make sure it's above other elements */
+    }
+
+      /* For the subtitle below the title */
+      .subtitle {
+            font-size: 1.5rem;
+            margin-top: 70px;
+        }
+
+            .video-container iframe {
+                width: 100%;
+                height: 250px;
+            }
+
+            .services, .contact, .support {
+                padding: 30px 10px;
+            }
+
+            .navbar-toggler {
+        position: fixed;  /* Position it fixed relative to the viewport */
+        right: 5%;  /* Move it to the right edge of the screen */
+        top: 4%;    /* Move it to the top of the page */
+        transform: translateY(0); /* No vertical offset */
+        z-index: 1050;  /* Make sure it stays on top of other elements */
+    }
+    .mobile-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-support-btn {
+        display: inline-block; /* Ensure it's inline to allow centering */
+        margin: 1px auto; /* Add margin to center it */
+    }
+
+    .navbar-nav .nav-item {
+    margin-left: 0px; /* Adjust the value to your preference */
+}
+ 
+.footer-logo {
+        width: 80px; /* Adjust the logo size for mobile if needed */
+    }
+
+    .belowHeader {
+    padding-top: 60%;  /* Same effect as margin-top, pushes down the content */
+}
+
+    }
+    
+    </style>
+</head>
+
+
+<body>
+
+    <header class="header">
+        <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
+            <img id="animatedBeerJS" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" 
+                 alt="Buy Me a Drink" class="logo">
+        </a>
+        
+        <script>
+            const beerImages = [
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
+            ];
+            
+            let index = 0;
+            function animateBeer() {
+                document.getElementById("animatedBeerJS").src = beerImages[index];
+                index = (index + 1) % beerImages.length;
+            }
+        
+            setInterval(animateBeer, 300); // Change every 300ms
+        </script>
+        
+        <h1>Captain Kimmer</h1>
+        <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" 
+           class="btn btn-warning btn-lg support-btn d-none d-lg-inline">
+           Support
+        </a>
+        
+        <p class="subtitle">A Dangerous Nautical Comedy Adventure!</p>
+    
+        <!-- Social Media Icons Section -->
+        <div class="social-icons">
+            <!-- Patreon (First Icon) -->
+            <a href="https://patreon.com/captainkimmer?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/PatreonLogo.png" alt="Patreon" class="social-logo">
+            </a>
+            <!-- Instagram (Second Icon) -->
+            <a href="https://www.instagram.com/captainkimmer92/" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/InstagramLogo.png" alt="Instagram" class="social-logo">
+            </a>
+            <!-- YouTube (Third Icon) -->
+            <a href="http://www.youtube.com/@CaptainKimmer" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/YoutubeLogo.png" alt="YouTube" class="social-logo">
+            </a>
+        </div>
+    
+        <hr class="nav-divider">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <div class="mobile-nav d-flex d-lg-none">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" class="btn btn-warning mobile-support-btn">Support</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexBlog.html">Captain's Log</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMap.html">Map</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMyShip.html">My Ship</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexGoals.html">The Dream</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexVideos.html">Videos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexContact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+
+<div class="belowHeader">
+
+    <div class="belowHeader">
+        <div class="container">
+            <h2 style="text-align: center; margin-top: 20px;">To Brest - Full System Failure!</h2>
+            <p style="text-align: center; font-size: 1rem; color: gray;">02/14/2025</p>
+    
+            <style>
+                .photo-column {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    max-width: 100%;
+                }
+            
+                .photo-column img {
+                    width: 100%;
+                    max-width: 600px; /* Adjusts max width for better readability */
+                    height: auto;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                }
+            
+                .photo-column p {
+                    max-width: 600px; /* Matches the max-width of images */
+                    text-align: justify;
+                    text-indent: 30px; /* Proper indentation */
+                    font-size: 1.1rem;
+                    line-height: 1.5;
+                }
+            </style>
+            
+            
+            <div class="photo-column">
+                <p>What a crazy trip this turned out to be. Before leaving, I had to do a few things—most importantly, get a latte from this gentleman who makes the best coffee I've had in Europe so far!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0964.jpg" alt="IMG_0964">
+                
+                <p>This is from the restaurant right above the Port Office in Cherbourg. Gonna miss it.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0965.jpg" alt="IMG_0965">
+                <p>If you haven't been to Europe, know that these beautiful little pleasures called lattes are nearly impossible to find!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0966.jpg" alt="IMG_0966">
+                <p>It was a little too windy to put up the new headsail, but with the help of a few locals, I got it done. They didn't speak English, but they were eager to help, partially because they had definitely seen the rescue propaganda and had a few laughs when they recognized me!</p>
+
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0967.jpg" alt="IMG_0967">
+                <p>I don't know why, but this awesome new furling line (the red line) that furls and unfurls my headsail makes me happy!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0968.jpg" alt="IMG_0968">
+                <p>I had to manually wind it around the recoil because we put the headsail on incorrectly. And my awesome friend Goran is holding the camera!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0969.jpg" alt="IMG_0969">
+                <p>And after we met with Jan, who let me film a quick tour of his amazing ship—the *Jan Wilde Zwaan*! After that, we had drinks, and he fed Goran and me all sorts of cheese! It was difficult to leave; we were having so much fun, and his ship is extremely huge and comfy. But Goran and I wanted to go to a restaurant in town.</p>
+                
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0970.jpg" alt="IMG_0970">
+                <p>Warning! A little graphic.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0971.jpg" alt="IMG_0971">
+                <p>After all the chemo, my organs don't process alcohol the same. I only had three drinks with Goran and Jan, spread out over 4+ hours. But I spent all night throwing up the delicious meal Goran and I had last night. It wasn't pleasant, and being hungover is not the way you want to sail. But I had to leave!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0972.jpg" alt="IMG_0972">
+                <p>I'm not sentimental at all, but I truly was sad to leave Cherbourg. I really wish I could have spent much more time there, and despite them charging me too much for the visit and the fake rescue, it's one of my favorite places on Earth.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0973.jpg" alt="IMG_0973">
+                <p>First thing, need to strap down the autopilot. Hopefully, it stays in place this time...</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0974.jpg" alt="IMG_0974">
+                <p>Leaving Cherbourg and its great harbor walls!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0975.jpg" alt="IMG_0975">
+                <p>This great wall, which Napoleon had the French build, is beautiful. It was constructed in the early 19th century as part of his grand plan to turn Cherbourg into an impregnable naval base. Spanning nearly 4 kilometers, the breakwater took decades to complete and required thousands of workers. Napoleon himself visited the construction site multiple times, determined to create a safe harbor for his fleet. Today, it still stands as one of the most impressive maritime defenses in Europe!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0977.jpg" alt="IMG_0977">
+                <p>Also, Goran informed me before I left that this was the last port the Titanic was at before attempting to cross the Atlantic Ocean. After research I believe it was actually the second to last stop, but still... kinda erie.</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0978.jpg" alt="IMG_0978">
+                <p>My VHF collision alarm was going off nonstop! Luckily, I figured out how to turn it off. Thank you, ChatGPT!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0979.jpg" alt="IMG_0979">
+                <p>And, of course, I'm very excited for this trip, which I believe is going to go super smoothly!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0982.jpg" alt="IMG_0982">
+                <p>And the mainsail won't go up—what the heck!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0983.jpg" alt="IMG_0983">
+                <p>Oh no! The main halyard is wrapped around the mast light.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0984.jpg" alt="IMG_0984">
+                <p>Me, eating the last of the Domino's I have, thinking about what to do with the main halyard. Nothing I've tried so far works! And though Jan lent me his harness so Goran could hoist me, I don't know how to climb the mast on my own.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0985.jpg" alt="IMG_0985">
+
+                <p>Let's release the halyard from the mainsail, pull it up around the mast light, and let it back down.</p>
+
+
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0986.jpg" alt="IMG_0986">
+                <p>Well, the wind made the halyard irrecoverable. But I'm not turning back! Good thing I had the headsail repaired because it's going to carry me to Brest!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0987.jpg" alt="IMG_0987">
+                <p>You can just see the halyard at the top of the mast. I'll have to get it later.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0989.jpg" alt="IMG_0989">
+                <p>Fishing buoys?</p>
+                
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0990.jpg" alt="IMG_0990">
+                <p>I have to make sure I tack away from these rocks.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0991.jpg" alt="IMG_0991">
+                <p>Well, that did not go well. I tacked, but slowly—too slow to have enough speed to make the full turn to catch the other side of the wind. So then we lost our wind power, and the current was drifting us toward the rocks. As I'm fixing my sunglasses, I explain the madness of having the engine fail to start as I narrowly miss obstructions in the water. Luckily, ChatGPT came in clutch, explaining that there's this red button on the throttle that needs a push to de-neutralize the diesel engine's start before turning it over.</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0992.jpg" alt="IMG_0992">
+                <p>Not pretty! Those circles are the rocks.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0993.jpg" alt="IMG_0993">
+                <p>Back to doing some sailing!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0994.jpg" alt="IMG_0994">
+                <p>Yawn! America!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0995.jpg" alt="IMG_0995">
+                <p>Dang, we're cruising!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0996.jpg" alt="IMG_0996">
+                <p>Is it the wind? No. Looks pretty normal. I must just be an awesome one sail, sailor!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0997.jpg" alt="IMG_0997">
+                <p>Not really. Turns out I hit some incredible currents near the more open Atlantic, and the waves were nearly as big as the storm I was in! Yet, the weather was calm. Look at the crest of this wave—it's much bigger than my boat!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0998.jpg" alt="IMG_0998">
+                <p>And then I turned around an island, and the ocean was suddenly smooth like glass.</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_0999.jpg" alt="IMG_0999">
+                <p>As you can see from the flag, we've lost the wind.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1002.jpg" alt="IMG_1002">
+                <p>Might as well put the sail away.</p>
+               
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1003.jpg" alt="IMG_1003">
+                <p>So I get to try pulling my new furling line!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1005.jpg" alt="IMG_1005">
+                <p>After a few hours of drifting, I start contemplating what I'm getting out of all this... Why am I out here?</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1006.jpg" alt="IMG_1006">
+                <p>Luckily, some good, yummy peas, pasta, and tuna cheered me up!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1007.jpg" alt="IMG_1007">
+                <p>Coughing in the night. Still pretty sick. And I ran the autopilot with the sail out—turns out that was a big mistake!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1008.jpg" alt="IMG_1008">
+                <p>Turns out, with the headsail, the wind, and the angle I had the autopilot steering, we were actually hove to.</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1009.jpg" alt="IMG_1009">
+                <p>Which means we didn't move from this spot all night.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1010.jpg" alt="IMG_1010">
+                <p>Here are my vitamins. Trying to stay healthy. My dad encourages me to be on the vitamin train, and I think it does help, so thanks, Dad!</p>
+
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1011.jpg" alt="IMG_1011">
+                <p>I'm going to make coffee!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1012.jpg" alt="IMG_1012">
+                <p>Then get to work!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1013.jpg" alt="IMG_1013">
+                <p>Still no wind... I think I'm going to run the engine. I don't like doing this—I want to sail. But it's time to move.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1014.jpg" alt="IMG_1014">
+                <p>The engine won't start... Remember the autopilot last night? I fried the batteries. Both of them.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1015.jpg" alt="IMG_1015">
+                <p>I have to let the solar panels charge them up. Good thing it's sunny. And now I have a lot of time for chores.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1016.jpg" alt="IMG_1016">
+                <p>Like cleaning!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1017.jpg" alt="IMG_1017">
+                <p>Hmmm, it's not charging as usual. I think I might have damaged the batteries :/ Justine told me this could happen if I over-drained them.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1018.jpg" alt="IMG_1018">
+                <p>My wolfies are drooping!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1019.jpg" alt="IMG_1019">
+                <p>That's better!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1020.jpg" alt="IMG_1020">
+                <p>And I tripped outside while bringing my noodles out to strain them. I lost most of my noodles in the cockpit.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1021.jpg" alt="IMG_1021">
+                <p>It's not charging fast enough. I need to tilt the panel so it faces the sun!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1022.jpg" alt="IMG_1022">
+                <p>Seems like a good time to start reading the Bible.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1024.jpg" alt="IMG_1024">
+                <p>At least I'm drifting in the right direction.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1026.jpg" alt="IMG_1026">
+                <p>After a few hours, the engine still won't start.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1027.jpg" alt="IMG_1027">
+                <p>So, more Bible.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1028.jpg" alt="IMG_1028">
+                <p>Which worked! It's difficult to tell, but the shaft is blurred because it's spinning! That means the engine is running!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1029.jpg" alt="IMG_1029">
+                <p>Thank you, God!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1030.jpg" alt="IMG_1030">
+                <p>Still no wind. Good thing we're motoring.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1031.jpg" alt="IMG_1031">
+                <p>I'm using this engine power to charge every device I have just in case.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1032.jpg" alt="IMG_1032">
+                <p>Even my VHF radio is charging! Crazy. I don't know why it wasn't working before.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1033.jpg" alt="IMG_1033">
+                <p>And I spilled my noodles again. This time I went to strain them and threw most of them into the ocean.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1034.jpg" alt="IMG_1034">
+                <p>Goran helped me put my flag up on the backstay. Now I'm going to try using this mooring rod to push it higher up the cable.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1035.jpg" alt="IMG_1035">
+                <p>And it looks pretty good next to the French courtesy flag Goran bought me. Apparently, you're supposed to fly a courtesy flag of the country you're visiting. I didn't know!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1036.jpg" alt="IMG_1036">
+                <p>He also got me these awesome oranges!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1037.jpg" alt="IMG_1037">
+                <p>Blue everywhere!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1038.jpg" alt="IMG_1038">
+                <p>What?! I'm out of gas!? Turns out the starter battery needs to be on to get a reading. Phew!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1039.jpg" alt="IMG_1039">
+                <p>Still not getting a great charge, even with the engine running. The batteries definitely have a little damage.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1040.jpg" alt="IMG_1040">
+                <p>Here's the plan: motor closer to shore, get cell service, and do some research. Then, game plan again.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1041.jpg" alt="IMG_1041">
+                <p>Almost there.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1043.jpg" alt="IMG_1043">
+                <p>Yep. My bad. Sorry, batteries. I was too hard on you.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1044.jpg" alt="IMG_1044">
+                <p>Look at that cool ship!</p>
+                
+
+
+
+
+
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1047.jpg" alt="IMG_1047">
+<p>The sun's going down.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1048.jpg" alt="IMG_1048">
+<p>All my systems are off.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1049.jpg" alt="IMG_1049">
+<p>And we're moving.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1050.jpg" alt="IMG_1050">
+<p>At least it's beautiful outside!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1051.jpg" alt="IMG_1051">
+<p>It was a long night in my sleeping bag out in the cockpit, manually steering the whole time. I taped up the mooring rod to the tiller to give it more length. Much more comfortable!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1052.jpg" alt="IMG_1052">
+<p>When we were close enough, I set adrift and slept. Of course, I had to legally keep my ship's lights on.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1053.jpg" alt="IMG_1053">
+<p>It's daylight! Looks like the sun is out. We got lucky.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1054.jpg" alt="IMG_1054">
+<p>But not for long. The engine needs to start soon, or that storm will block out the sun.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1055.jpg" alt="IMG_1055">
+<p>We got it running!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1056.jpg" alt="IMG_1056">
+<p>Thank you, Jesus!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1057.jpg" alt="IMG_1057">
+<p>You can see some of the lighthouses that guided me through the night along the French coast.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1058.jpg" alt="IMG_1058">
+<p>And we're moving with the currents!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1059.jpg" alt="IMG_1059">
+<p>Dolphins! They played with my ship for 30 minutes.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1062.jpg" alt="IMG_1062">
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1063.jpg" alt="IMG_1063">
+<p>Lots of rocks on this path.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1064.jpg" alt="IMG_1064">
+<p>But beautiful.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1065.jpg" alt="IMG_1065">
+<p>I leaned on the boom and bent it a little. Dang. I fixed it later, but for a second, I thought I did serious damage.</p>
+
+
+
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1069.jpg" alt="IMG_1069">
+<p>Other boaters were zooming across the ocean everywhere.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1076.jpg" alt="IMG_1076">
+<p>Look at those windmills!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1077.jpg" alt="IMG_1077">
+<p>And this thing! I think it monitors the weather and sea state.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1078.jpg" alt="IMG_1078">
+<p>Beautiful French town!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1079.jpg" alt="IMG_1079">
+<p>And a church with a lighthouse?</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1080.jpg" alt="IMG_1080">
+<p>Dramatic pensiveness.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1081.jpg" alt="IMG_1081">
+<p>Weird scenario here. We were running with the current, so moving fast! But the wind was going in the opposite direction, causing the waves to move against the water flow, which resulted in me getting sprayed a lot!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1082.jpg" alt="IMG_1082">
+<p>My lighthouses! With WWII lookout bunkers.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1083.jpg" alt="IMG_1083">
+<p>This ship was cruising! It screamed past me.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1084.jpg" alt="IMG_1084">
+<p>The first sight of Brest.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1085.jpg" alt="IMG_1085">
+<p>And this giant research ship.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1086.jpg" alt="IMG_1086">
+<p>Time to get ready to dock.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1087.jpg" alt="IMG_1087">
+<p>And look professional, radioing in on the now charged VHF.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1088.jpg" alt="IMG_1088">
+<p>Getting ready to dock in new ports always makes me nervous.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/03_BrestFrance/IMG_1089.jpg" alt="IMG_1089">
+<p>But I got it done! Made it safely to Brest in three days! Glad to be here—Brest turns out to be one of my all-time favorite places.</p>
+
+                
+                
+
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .photo-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .photo-column img {
+            width: 90%;
+            max-width: 600px; /* Ensures images are centered and look great */
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+    
+        
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Captain Kimmer's Nautical Comedy Adventure</h2>
+    
+            <!-- Social Media & Beer Animation Section -->
+            <div class="footer-icons">
+                <!-- Patreon -->
+                <a href="https://patreon.com/captainkimmer?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank">
+                    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/PatreonLogo.png" alt="Patreon" class="footer-logo">
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/captainkimmer92/" target="_blank">
+                    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/InstagramLogo.png" alt="Instagram" class="footer-logo">
+                </a>
+                <!-- YouTube -->
+                <a href="http://www.youtube.com/@CaptainKimmer" target="_blank">
+                    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/YoutubeLogo.png" alt="YouTube" class="footer-logo">
+                </a>
+                <!-- Beer Animation (Buy Me a Drink) -->
+                <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
+                    <img id="animatedBeerFooter" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" alt="Buy Me a Drink" class="footer-logo">
+                </a>
+            </div>
+    
+            <p>All Rights Reserved</p>
+            <p>&copy; 2025</p>
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Favicons/favicon.ico" alt="Captain Kimmer Logo" class="footer-logo">
+        </div>
+    </footer>
+    
+    <script>
+        // Beer Animation Script for Footer
+        const beerImagesFooter = [
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
+        ];
+    
+        let beerIndexFooter = 0;
+        function animateBeerFooter() {
+            document.getElementById("animatedBeerFooter").src = beerImagesFooter[beerIndexFooter];
+            beerIndexFooter = (beerIndexFooter + 1) % beerImagesFooter.length;
+        }
+    
+        setInterval(animateBeerFooter, 300); // Change every 300ms
+    </script>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const currentPath = window.location.pathname;  // Get the current page path
+        const navLinks = document.querySelectorAll('.navbar .nav-link');  // Select all nav links
+    
+        navLinks.forEach(link => {
+            // Check if it's the homepage or if the link matches the current page path
+            if ((currentPath === '/' && link.href === 'https://captainkimmer.com/') || link.pathname === currentPath) {
+                link.classList.add('active');  // Add the 'active' class to underline
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><head>
+    <!-- ✅ Favicon Links (Unchanged) -->
+  <link rel="icon" type="image/x-icon" href="/Favicons/favicon.ico">
+  <link rel="shortcut icon" href="/Favicons/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Favicons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/main/Favicons/favicon.ico">
+  
+  <!-- ✅ Essential Meta Tags for SEO -->
+  <meta charset="UTF-8">
+  <meta name="description" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure! Join us for high-seas laughter, pirate performances, and unforgettable voyages.">
+  <meta name="keywords" content="Captain Kimmer, Nautical Comedy, Pirate Shows, High-Seas Adventure, Sunset Cruises, Ocean Fun">
+  <meta name="author" content="Captain Kimmer Team">
+  
+  <!-- ✅ Phone Orientation Hold Portrait -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  
+  <!-- ✅ Open Graph Tags for Social Media -->
+  <meta property="og:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
+  <meta property="og:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
+  <meta property="og:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
+  <meta property="og:url" content="https://CaptainKimmer.com">
+  <meta property="og:type" content="website">
+  
+  <!-- ✅ Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
+  <meta name="twitter:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
+  <meta name="twitter:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
+  
+  <!-- Lock portrait mode -->
+  <script>
+      if (window.innerHeight > window.innerWidth) {
+          document.body.classList.add("portrait");
+      } else {
+          document.body.classList.remove("portrait");
+      }
+  
+      window.addEventListener('resize', function() {
+          if (window.innerHeight > window.innerWidth) {
+              document.body.classList.add("portrait");
+          } else {
+              document.body.classList.remove("portrait");
+          }
+      });
+  </script>
+     
+    <title>Captain Kimmer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+    
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .header {
+            background-color: #005f73;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            left: 0%;
+            width: 100%;
+            position: fixed;
+        }
+
+        /* Title centered */
+        .header h1 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 4rem;
+            transform: translate(-50%, -50%);  /* Shift the element back by half of its own width and height */
+            left: 50%;
+            top: 7.5%;
+            position: fixed;
+            z-index: 1;
+        }
+
+        /* For the subtitle below the title */
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 80px;
+        }
+
+        .nav-divider {
+            width: 80%;
+            margin: 10px auto;
+            border: 0;
+            height: 1px;
+            background-color: white;
+        }
+
+        .navbar {
+            margin-top: 5px;
+        }
+
+        .navbar .nav-link {
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffdd57;
+        }
+
+        /* Logo Positioning - Top left of the page, adjusted within video container */
+        .logo {
+    width: 80px;
+    height: auto;
+    position: absolute; /* Position it absolutely within the header */
+    left: 30%; /* Center it horizontally */
+    top: 8%; /* Adjust this value to control the vertical distance */
+    padding: 10px;
+}
+        /* Support Button Positioning - Top right of the page, adjusted within video container */
+        .support-btn {
+            font-size: 1.2rem;
+            padding: 5px 15px;
+            position: absolute;
+            right: 29%;  
+            top: 15%;
+            padding: 10px;
+        }
+
+        .video-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .video-container iframe {
+            border: 5px solid black;
+        }
+
+        .services, .contact, .support {
+            padding: 60px 20px;
+        }
+
+        .footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row on desktop */
+    gap: 10px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.photo-grid img {
+    width: 100%;
+    max-width: 300px; /* Ensures uniform size */
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 image per row on mobile */
+    }
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer h2,
+.footer p {
+    margin: 5px 0; /* Ensures spacing between the elements */
+}
+
+.footer-logo {
+    width: 100px;  /* You can adjust the size of the logo */
+    margin-top: 20px;
+}
+
+        .navbar-nav .nav-item {
+    margin-left: 20px; /* Adjust the value to your preference */
+}
+
+.navbar .nav-link.active {
+    text-decoration: underline;
+    font-weight: bold; /* Optional: make it bold to highlight */
+}
+
+/* Social Icons Styling */
+.social-icons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    border: 2px solid black; /* Black border added */
+    border-radius: 5px; /* Optional: Rounds the corners slightly */
+    padding: 3px; /* Adds space inside the border */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.social-logo:hover {
+    transform: scale(1.2);
+    border-color: #ffdd57; /* Changes border color on hover (optional) */
+}
+
+        .belowHeader {
+    padding-top: 11%;  /* Same effect as margin-top, pushes down the content */
+}
+
+        /* ✅ Mobile-Specific Styling */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .logo {
+        width: 70px;
+        position: fixed;  /* Fix the logo in place */
+        left: 5%;  /* Move it slightly from the left edge */
+        top: 2%;  /* Adjust vertical position */
+        transform: translateY(0); /* No vertical offset */
+        z-index: 1049;  /* Make sure it's above other elements */
+    }
+
+      /* For the subtitle below the title */
+      .subtitle {
+            font-size: 1.5rem;
+            margin-top: 70px;
+        }
+
+            .video-container iframe {
+                width: 100%;
+                height: 250px;
+            }
+
+            .services, .contact, .support {
+                padding: 30px 10px;
+            }
+
+            .navbar-toggler {
+        position: fixed;  /* Position it fixed relative to the viewport */
+        right: 5%;  /* Move it to the right edge of the screen */
+        top: 4%;    /* Move it to the top of the page */
+        transform: translateY(0); /* No vertical offset */
+        z-index: 1050;  /* Make sure it stays on top of other elements */
+    }
+    .mobile-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-support-btn {
+        display: inline-block; /* Ensure it's inline to allow centering */
+        margin: 1px auto; /* Add margin to center it */
+    }
+
+    .navbar-nav .nav-item {
+    margin-left: 0px; /* Adjust the value to your preference */
+}
+ 
+.footer-logo {
+        width: 80px; /* Adjust the logo size for mobile if needed */
+    }
+
+    .belowHeader {
+    padding-top: 60%;  /* Same effect as margin-top, pushes down the content */
+}
+
+    }
+    
+    </style>
+</head>
+
+
+<body>
+
+    <header class="header">
+        <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
+            <img id="animatedBeerJS" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" 
+                 alt="Buy Me a Drink" class="logo">
+        </a>
+        
+        <script>
+            const beerImages = [
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
+            ];
+            
+            let index = 0;
+            function animateBeer() {
+                document.getElementById("animatedBeerJS").src = beerImages[index];
+                index = (index + 1) % beerImages.length;
+            }
+        
+            setInterval(animateBeer, 300); // Change every 300ms
+        </script>
+        
+        <h1>Captain Kimmer</h1>
+        <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" 
+           class="btn btn-warning btn-lg support-btn d-none d-lg-inline">
+           Support
+        </a>
+        
+        <p class="subtitle">A Dangerous Nautical Comedy Adventure!</p>
+    
+        <!-- Social Media Icons Section -->
+        <div class="social-icons">
+            <!-- Patreon (First Icon) -->
+            <a href="https://patreon.com/captainkimmer?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/PatreonLogo.png" alt="Patreon" class="social-logo">
+            </a>
+            <!-- Instagram (Second Icon) -->
+            <a href="https://www.instagram.com/captainkimmer92/" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/InstagramLogo.png" alt="Instagram" class="social-logo">
+            </a>
+            <!-- YouTube (Third Icon) -->
+            <a href="http://www.youtube.com/@CaptainKimmer" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/YoutubeLogo.png" alt="YouTube" class="social-logo">
+            </a>
+        </div>
+    
+        <hr class="nav-divider">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <div class="mobile-nav d-flex d-lg-none">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" class="btn btn-warning mobile-support-btn">Support</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexBlog.html">Captain's Log</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMap.html">Map</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMyShip.html">My Ship</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexGoals.html">The Dream</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexVideos.html">Videos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexContact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+
+<div class="belowHeader">
+
+    <div class="belowHeader">
+        <div class="container">
+            <h2 style="text-align: center; margin-top: 20px;">The Beginning - Buying the Ship!</h2>
+            <p style="text-align: center; font-size: 1rem; color: gray;">02/14/2025</p>
+    
+            <style>
+                .photo-column {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    max-width: 100%;
+                }
+            
+                .photo-column img {
+                    width: 100%;
+                    max-width: 600px; /* Adjusts max width for better readability */
+                    height: auto;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                }
+            
+                .photo-column p {
+                    max-width: 600px; /* Matches the max-width of images */
+                    text-align: justify;
+                    text-indent: 30px; /* Proper indentation */
+                    font-size: 1.1rem;
+                    line-height: 1.5;
+                }
+            </style>
+            
+            <div class="photo-column">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/LeavingAirport.png" alt="IMG_0556">
+                
+                <p>First thing, I flew out on February 14th, 2025, with a ridiculous amount of equipment, which I will list in another log. I had just finished my antibiotics and was still incredibly ill with pneumonia. A quick stop in Phoenix was nice to see my old friends, and then it was on to Heathrow Airport in London. The flight was delayed because they forgot to detach a pulley system from the front tire—not exactly a welcoming start. But we did make it, and a rental car took me down to Chichester, driving on the wrong side of the road, just dandy.</p>
+            
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0558.jpg" alt="IMG_0558">
+    
+    <p>I stayed at the Itchenor Sailing Club, where I was treated well, and the people were great. The Force 4 Chandlery crew were also fantastic, and I'm sure the town of Chichester was as well. I did some light socializing at The Ship bar, but there was too much business to take care of.</p>
+
+    <img src="https://github.com/kimmerandcasper/captainkimmer/raw/refs/heads/main/Photos/Initial%20Photos/PurchasingTheShip.JPG" alt="IMG_0556">
+    
+    <p>I met Justine and Pete, Kite's owners, at 10 a.m. on Sunday for a one-hour walkthrough of the ship. There was so much to cover, yet so little time, but I trusted Justine and Pete. They are great people, and they are the reason I felt confident purchasing the ship overseas without seeing her first.</p>
+    
+    <p>Later, I met Jonty, the representative from Indigo Yachting, to transfer the ownership documents. The yacht company had my funds, so once I received the bill of sale, they would release the payment to Justine and Pete. By that afternoon, the ship was mine!</p>
+    
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0559.jpg" alt="IMG_0559">
+
+    <p>The next morning, I went into town to the grocery store and then to Force 4 to load up on supplies. I also bought a dinghy and an outboard motor to transport myself and my gear to the ship. Justine had said I could move aboard, so I figured I might as well make it home now. The trouble was, after returning the car, I came back to find my dinghy buried in the mud—the tide had gone out! And it was dark...</p>
+    
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0561.jpg" alt="IMG_0561">
+
+    <p>Like the waves you'll see later on, this image doesn't do the mud justice. My boots sank like quicksand as I attempted to lift the outboard motor and dinghy up to the dock.</p>
+        
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0560.jpg" alt="IMG_0560">
+        
+        <p>With every step, I nearly lost a boot as the wet dirt tried to suck it off. But we made it down the dock with the last load of my supplies. I had left the key behind in my room and wrote the Itchenor Sailing Club a nice farewell message. I was checked out! No turning back.</p>
+
+        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0562.jpg" alt="IMG_0562">
+
+        <p>Dinghying in the dark was more eventful than expected. I ran out of gas about 75% of the way there. Luckily, I had two spare cans of gas and wrenched the cap off. Unluckily, the currents in the reach were strong, and we were moving faster than expected.Though I got the gas in quickly, I gave a pull, and to my frustration, the engine (which had behaved so well) didn’t start. I tried and tried but failed to get it running. Out of nowhere, we collided with a mooring. We were really moving through the darkness faster than I had realized. Good thing that wasn’t the bow of a ship hitting my head—getting knocked out in the reach at night was not how my story was going to end.</p>
+        
+        <p>The video footage of this is quite fun! Can’t wait to get it up.</p>
+        
+        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0563.jpg" alt="IMG_0563">
+
+        <p>Once on the ship, it was very crowded with my belongings, and I was feeling awful from inhaling seawater during my trips back and forth. And cold. So, I thought a can of beans would lift my spirits. Suspecting that starting the stove wouldn’t go well, I ran through the notes and decided to give it a go, desperate for heat and comfort. However, my funnel had broken during the journey, and it turns out duct tape doesn’t fix broken funnels. I slowly poured the Premium Paraffin through the funnel, but it dripped onto the stove. After wiping it down, I poured the methylene into the basin to preheat the burner, but upon ignition, the whole stove caught fire!</p>
+        
+        <p>The immediate emergency was getting all fuel sources away from the fire—like the methylene bottle in the picture. That happened as fast as possible. Luckily, I already had a new fire extinguisher from Force 4 ready. Not that it was needed. The fire didn’t bother me. It remained on the stove, and I had no trouble watching it very closely... it was so warm! It heated the whole ship up.</p>
+
+        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0564.jpg" alt="IMG_0564">
+
+        <p>Waking from my first night on the ship was not pleasant. Yesterday’s events had aggravated my lungs. I was very ill. It was in my lungs, throat, ears, and eyes—it drained my soul. In that moment, I wasn’t feeling the trip. Though, I withheld judgment until I set sail.</p>
+        
+        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0565.jpg" alt="IMG_0565">
+
+        <p>I didn't waste much time whining - let's get the stove working. Coffee would make me feel better</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0566.jpg" alt="IMG_0566">
+
+                <p>And I did get the stove running! And I did coffee!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0568.jpg" alt="IMG_0568">
+
+                <p>And hot soup as well! "Such a big win!" I said. And it was. I felt much better. Suddenly, I was feeling the trip.</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0569.jpg" alt="IMG_0569">
+
+                
+                <p>Now that I've had coffee, it's time to get things done. The ship is small, and I need to get in and out of the side cabinets frequently. The table is for guests, not quests. It needs to go.</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0571.jpg" alt="IMG_0571">
+
+                <p>Everything was hard. So was removing the table. The bolts had nuts below the marine wood flooring. Two of the bolt's nuts were unreachable, so I had to use a hammer to lift the base, squeezing the nut on the other side, and twisting the bolt under pressure to get the final two bolts out. It worked, but it took an hour. The table's gone.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0556.jpg" alt="IMG_0556">
+
+                <p>I had found what I was looking for. Everything was hard. Painful. It kept my mind off the past and reminded me of battling blood cancer again. Still, it was imperative to keep my spirits up to push through the pneumonia. I made more food—this time, noodles with seawater for salt. I got the idea from Sam Holmes, who did this trick on his Hawaii passage (I believe). Shockingly, the noodles were too salty, but I was happy and ate them anyway.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0572.jpg" alt="IMG_0572">
+                
+                <p>There were quite a few cool boats. I learned quickly that these mini windmills generating electricity are pretty cool because generating electricity at night is impossible with just my solar panels—unless I run the engine. The video footage has so many more ships to see!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0574.jpg" alt="IMG_0574">
+
+                <p>Damn, deeze beens be fine!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0575.jpg" alt="IMG_0575">
+
+                <p>Anchor lesson! My friend Sam, who had moored in front of me, was now behind me. Typically, we faced the same direction and were much farther apart. When anchored, you swing a full 360 degrees. I knew this, but now I was seeing it in action for the first time.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0573.jpg" alt="IMG_0573">
+
+                <p>Time to wash all the tidal mud off the outboard motor.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0576.jpg" alt="IMG_0576">
+
+                <p>And dinghy!</p>
+
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0577.jpg" alt="IMG_0577">
+
+                <p>And myself!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0578.jpg" alt="IMG_0578">
+
+                <p>This image is confusing because I forgot to clean my blue rain jacket beside me, but what’s really happening is me putting on nice, tidal-mud-free gear!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0579.jpg" alt="IMG_0579">
+
+                <p>I had to dinghy back to Force 4 to get a hose so I could fill my water tanks. On the way in, I pointed out the tidal differences.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0580.jpg" alt="IMG_0580">
+
+                <p>When I got back, it was time to pack up the dinghy. I would have dragged it behind—that was standard, particularly because we were moving far—but I wanted to test the outboard motor hoist and see if I could get the dinghy onto the ship myself.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0581.jpg" alt="IMG_0581">
+                
+                <p>Which I did!</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0582.jpg" alt="IMG_0582">
+
+                <p>So I tied up the dinghy</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0584.jpg" alt="IMG_0584">
+
+                <p>Turned on my instruments.</p>
+               
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0585.jpg" alt="IMG_0585">
+
+                <p>Fired up the engine.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0583.jpg" alt="IMG_0583">
+
+                <p>Released the ship.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0586.jpg" alt="IMG_0586">
+
+<p>Holy shit, we're moving!</p>
+
+<p>But not exactly. Turns out there are two valves for each fuel pump, and I had only opened one. The fuel ran out, the engine died, and what you're looking at is me in a panic, wading engine-less through a harbor of 20,000 mooring balls and ships—kind of panicking. Happy that Kite was so nimble and that the current was in the bow's favor.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0627.jpg" alt="IMG_0627">
+
+<p>Everyone who owns a boat knows the feeling of beeing powerless in the water. Fortunately Justine left me a mooring stick and I caught an open mooring and quickly sorted out the engine issue with Pete. In a way, without me even realizing it, Justine and Pete were almost becoming a part of my team.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0587.jpg" alt="IMG_0587">
+
+<p>And now I was moving peacefully again!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0588.jpg" alt="IMG_0588">
+
+<p>Nice calm waters.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0589.jpg" alt="IMG_0589">
+
+<p>Other sailors!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0590.jpg" alt="IMG_0590">
+<p>A solo sailor!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0591.jpg" alt="IMG_0591">
+
+<p>And it’s shallow! Need to back up fast.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0592.jpg" alt="IMG_0592">
+
+<p>Good thing I was paying attention. I need to treat the B&G chart plotter like it’s my religion. Kite's draft is about 1.8m. The image you see is of me explaining how quickly firing it into reverse is almost like backwinding a sail—except it’s backwatering the rudder. And it threw the tiller into me.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0593.jpg" alt="IMG_0593">
+
+<p>These are scary waves. Too bad you can't tell on camera. We'll stay away from those.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0594.jpg" alt="IMG_0594">
+
+<p>It's amazing how close you have to be to the sand to stay in the deep when going to Sparks Marina. There are shallows to both my right and left.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0595.jpg" alt="IMG_0595">
+
+<p>A great guy named Matt met me to receive my docking ropes! You can find him in the video version when it’s done!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0596.jpg" alt="IMG_0596">
+
+<p>He helped me get pink diesel fuel. I think it was 65 GBP to fill 3/4 of the tank.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0597.jpg" alt="IMG_0597">
+
+<p>Then I went out for my first anchor. This green light became my best friend. I needed it to know our anchor wasn’t dragging—meaning the ship was drifting in the night.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0598.jpg" alt="IMG_0598">
+
+<p>The halyard rigging was loose, and the boom was slapping, so I tightened it up. A screw had actually come loose, so I’m glad I got after this. It’s nearly impossible to steer the ship and do any other task. One second away from the tiller results in major course deviations.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0599.jpg" alt="IMG_0599">
+
+<p>Back at the dock, I had filled up the water. I thought, as would be intuitive, that you just filled it up until it back-flowed like gas. I also assumed the water tanks were solid, not bladders. Nope, I was wrong. I overfilled both bladders, which were far too large for the benches they were hidden under. They pulled the wood apart but didn’t split any. They just bent it and popped out screws.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0600.jpg" alt="IMG_0600">
+
+<p>The coast guard visited me in the night and told me I wasn't anchored exactly where the anchorage was, so I moved a few hundred feet. Hoisting the anchor and navigating the ship in the dark for the first time went well! But unfortunately, I had the camera flipped the wrong direction. :/</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0602.jpg" alt="IMG_0602">
+
+<p>The green light was still guiding me.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0604.jpg" alt="IMG_0604">
+
+<p>No! One of the bladders was leaking. I had to hand pump out both anyway to fix the benches. This took three hours on a stormy, anchored night.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0605.jpg" alt="IMG_0605">
+
+<p>I didn't have Casper, but I had my puzzle wolf art. I put it up. Not the same as having Casper, but it's better than nothing.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0606.jpg" alt="IMG_0606">
+
+<p>It was impossible to sleep that night. My mind kept telling me we we're moving in the storm, even though we weren't. Because it was my first anchoring, I felt extremely uncomfortable just sleeping through the rough weather that could drag us out of the anchorage.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0607.jpg" alt="IMG_0607">
+
+<p>Back to Sparks Marina. I needed to get a drill to fix the benches—and more water!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0608.jpg" alt="IMG_0608">
+
+<p>What a workout pulling 100 feet of this chained anchor out of the water was. I didn't like doing that this morning, and I didn’t remember it being as hard last night when I had to move.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0609.jpg" alt="IMG_0609">
+
+<p>This time, I successfully docked by myself. Not by choice—Matt left me to it on my own. Made me laugh. And I'm glad he did—I got it done!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0610.jpg" alt="IMG_0610">
+
+<p>Just a tiny wood scuff from the dock. In the video, you can see that I wipe it right off!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0611.jpg" alt="IMG_0611">
+
+<p>That's my pretty boat!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0612.jpg" alt="IMG_0612">
+
+<p>And of course, if you know me -- I can't resist Domino's!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0613.jpg" alt="IMG_0613">
+
+<p>The drill shop was just down the street. When I was done there, my pizza was ready!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0614.jpg" alt="IMG_0614">
+
+<p>I was all business—no time to enjoy the scenery, but what a cool seashell wall.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0615.jpg" alt="IMG_0615">
+
+<p>I put my back against the benches, pushed against the wall with my feet, and they popped right into shape.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0616.jpg" alt="IMG_0616">
+
+<p>The crew at Sparks Marina was very cool. James, Patrick, and Matt so I stayed the night in a visitor's berth, that I pulled my ship into</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0617.jpg" alt="IMG_0617">
+
+<p>Unfortunately, the drill I picked up at the shop didn't work, but the maintenance supply at the marina had a good DeWalt. This was one thing I missed back in America—we always have everything, nearly everywhere. I love Europe and the people, but they don't have much, particularly outside their cities. Looks like I'll have to walk an hour back to the shop to return the drill tomorrow. Thank goodness a barman named Henry offered to give me a ride back to my ship.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0618.jpg" alt="IMG_0618">
+
+<p>Let's try filling up just the right bladder partially.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0619.jpg" alt="IMG_0619">
+
+<p>It's time to sail. Let's compact the dinghy and do this for real!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0620.jpg" alt="IMG_0620">
+
+<p>First let's figure out how to hoise these bad boys.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0621.jpg" alt="IMG_0621">
+
+<p>I think I have it...</p>
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0622.jpg" alt="IMG_0622">
+
+<p>That definitely lifts the main!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0624.jpg" alt="IMG_0624">
+
+<p>And I'm sailing! Definitely. I could only get the headsail out—the wind was blowing too hard to raise the main without autopilot. But damn, was Kite fast. She was doing 6+ knots, faster than the motor moves her.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0625.jpg" alt="IMG_0625">
+
+<p>And she steers great too!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/01_TheBigginingChichester/IMG_0626.jpg" alt="IMG_0626">
+
+<p>Tomorrow, it’s time for the real deal! We’re crossing the English Channel to France!</p>
+
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .photo-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .photo-column img {
+            width: 90%;
+            max-width: 600px; /* Ensures images are centered and look great */
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+    
+        
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Captain Kimmer's Nautical Comedy Adventure</h2>
+    
+            <!-- Social Media & Beer Animation Section -->
+            <div class="footer-icons">
+                <!-- Patreon -->
+                <a href="https://patreon.com/captainkimmer?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank">
+                    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/PatreonLogo.png" alt="Patreon" class="footer-logo">
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/captainkimmer92/" target="_blank">
+                    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/InstagramLogo.png" alt="Instagram" class="footer-logo">
+                </a>
+                <!-- YouTube -->
+                <a href="http://www.youtube.com/@CaptainKimmer" target="_blank">
+                    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/YoutubeLogo.png" alt="YouTube" class="footer-logo">
+                </a>
+                <!-- Beer Animation (Buy Me a Drink) -->
+                <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
+                    <img id="animatedBeerFooter" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" alt="Buy Me a Drink" class="footer-logo">
+                </a>
+            </div>
+    
+            <p>All Rights Reserved</p>
+            <p>&copy; 2025</p>
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Favicons/favicon.ico" alt="Captain Kimmer Logo" class="footer-logo">
+        </div>
+    </footer>
+    
+    <script>
+        // Beer Animation Script for Footer
+        const beerImagesFooter = [
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
+        ];
+    
+        let beerIndexFooter = 0;
+        function animateBeerFooter() {
+            document.getElementById("animatedBeerFooter").src = beerImagesFooter[beerIndexFooter];
+            beerIndexFooter = (beerIndexFooter + 1) % beerImagesFooter.length;
+        }
+    
+        setInterval(animateBeerFooter, 300); // Change every 300ms
+    </script>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const currentPath = window.location.pathname;  // Get the current page path
+        const navLinks = document.querySelectorAll('.navbar .nav-link');  // Select all nav links
+    
+        navLinks.forEach(link => {
+            // Check if it's the homepage or if the link matches the current page path
+            if ((currentPath === '/' && link.href === 'https://captainkimmer.com/') || link.pathname === currentPath) {
+                link.classList.add('active');  // Add the 'active' class to underline
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

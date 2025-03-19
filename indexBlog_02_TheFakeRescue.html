@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><head>
+    <!-- ✅ Favicon Links (Unchanged) -->
+  <link rel="icon" type="image/x-icon" href="/Favicons/favicon.ico">
+  <link rel="shortcut icon" href="/Favicons/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Favicons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/main/Favicons/favicon.ico">
+  
+  <!-- ✅ Essential Meta Tags for SEO -->
+  <meta charset="UTF-8">
+  <meta name="description" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure! Join us for high-seas laughter, pirate performances, and unforgettable voyages.">
+  <meta name="keywords" content="Captain Kimmer, Nautical Comedy, Pirate Shows, High-Seas Adventure, Sunset Cruises, Ocean Fun">
+  <meta name="author" content="Captain Kimmer Team">
+  
+  <!-- ✅ Phone Orientation Hold Portrait -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  
+  <!-- ✅ Open Graph Tags for Social Media -->
+  <meta property="og:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
+  <meta property="og:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
+  <meta property="og:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
+  <meta property="og:url" content="https://CaptainKimmer.com">
+  <meta property="og:type" content="website">
+  
+  <!-- ✅ Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
+  <meta name="twitter:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
+  <meta name="twitter:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
+  
+  <!-- Lock portrait mode -->
+  <script>
+      if (window.innerHeight > window.innerWidth) {
+          document.body.classList.add("portrait");
+      } else {
+          document.body.classList.remove("portrait");
+      }
+  
+      window.addEventListener('resize', function() {
+          if (window.innerHeight > window.innerWidth) {
+              document.body.classList.add("portrait");
+          } else {
+              document.body.classList.remove("portrait");
+          }
+      });
+  </script>
+     
+    <title>Captain Kimmer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+    
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .header {
+            background-color: #005f73;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            left: 0%;
+            width: 100%;
+            position: fixed;
+        }
+
+        /* Title centered */
+        .header h1 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 4rem;
+            transform: translate(-50%, -50%);  /* Shift the element back by half of its own width and height */
+            left: 50%;
+            top: 7.5%;
+            position: fixed;
+            z-index: 1;
+        }
+
+        /* For the subtitle below the title */
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 80px;
+        }
+
+        .nav-divider {
+            width: 80%;
+            margin: 10px auto;
+            border: 0;
+            height: 1px;
+            background-color: white;
+        }
+
+        .navbar {
+            margin-top: 5px;
+        }
+
+        .navbar .nav-link {
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffdd57;
+        }
+
+        /* Logo Positioning - Top left of the page, adjusted within video container */
+        .logo {
+    width: 80px;
+    height: auto;
+    position: absolute; /* Position it absolutely within the header */
+    left: 30%; /* Center it horizontally */
+    top: 8%; /* Adjust this value to control the vertical distance */
+    padding: 10px;
+}
+        /* Support Button Positioning - Top right of the page, adjusted within video container */
+        .support-btn {
+            font-size: 1.2rem;
+            padding: 5px 15px;
+            position: absolute;
+            right: 29%;  
+            top: 15%;
+            padding: 10px;
+        }
+
+        .video-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .video-container iframe {
+            border: 5px solid black;
+        }
+
+        .services, .contact, .support {
+            padding: 60px 20px;
+        }
+
+        .footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row on desktop */
+    gap: 10px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.photo-grid img {
+    width: 100%;
+    max-width: 300px; /* Ensures uniform size */
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 image per row on mobile */
+    }
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer h2,
+.footer p {
+    margin: 5px 0; /* Ensures spacing between the elements */
+}
+
+.footer-logo {
+    width: 100px;  /* You can adjust the size of the logo */
+    margin-top: 20px;
+}
+
+        .navbar-nav .nav-item {
+    margin-left: 20px; /* Adjust the value to your preference */
+}
+
+.navbar .nav-link.active {
+    text-decoration: underline;
+    font-weight: bold; /* Optional: make it bold to highlight */
+}
+
+/* Social Icons Styling */
+.social-icons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    border: 2px solid black; /* Black border added */
+    border-radius: 5px; /* Optional: Rounds the corners slightly */
+    padding: 3px; /* Adds space inside the border */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.social-logo:hover {
+    transform: scale(1.2);
+    border-color: #ffdd57; /* Changes border color on hover (optional) */
+}
+
+        .belowHeader {
+    padding-top: 11%;  /* Same effect as margin-top, pushes down the content */
+}
+
+        /* ✅ Mobile-Specific Styling */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .logo {
+        width: 70px;
+        position: fixed;  /* Fix the logo in place */
+        left: 5%;  /* Move it slightly from the left edge */
+        top: 2%;  /* Adjust vertical position */
+        transform: translateY(0); /* No vertical offset */
+        z-index: 1049;  /* Make sure it's above other elements */
+    }
+
+      /* For the subtitle below the title */
+      .subtitle {
+            font-size: 1.5rem;
+            margin-top: 70px;
+        }
+
+            .video-container iframe {
+                width: 100%;
+                height: 250px;
+            }
+
+            .services, .contact, .support {
+                padding: 30px 10px;
+            }
+
+            .navbar-toggler {
+        position: fixed;  /* Position it fixed relative to the viewport */
+        right: 5%;  /* Move it to the right edge of the screen */
+        top: 4%;    /* Move it to the top of the page */
+        transform: translateY(0); /* No vertical offset */
+        z-index: 1050;  /* Make sure it stays on top of other elements */
+    }
+    .mobile-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-support-btn {
+        display: inline-block; /* Ensure it's inline to allow centering */
+        margin: 1px auto; /* Add margin to center it */
+    }
+
+    .navbar-nav .nav-item {
+    margin-left: 0px; /* Adjust the value to your preference */
+}
+ 
+.footer-logo {
+        width: 80px; /* Adjust the logo size for mobile if needed */
+    }
+
+    .belowHeader {
+    padding-top: 60%;  /* Same effect as margin-top, pushes down the content */
+}
+
+    }
+    
+    </style>
+</head>
+
+
+<body>
+
+    <header class="header">
+        <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
+            <img id="animatedBeerJS" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" 
+                 alt="Buy Me a Drink" class="logo">
+        </a>
+        
+        <script>
+            const beerImages = [
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
+            ];
+            
+            let index = 0;
+            function animateBeer() {
+                document.getElementById("animatedBeerJS").src = beerImages[index];
+                index = (index + 1) % beerImages.length;
+            }
+        
+            setInterval(animateBeer, 300); // Change every 300ms
+        </script>
+        
+        <h1>Captain Kimmer</h1>
+        <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" 
+           class="btn btn-warning btn-lg support-btn d-none d-lg-inline">
+           Support
+        </a>
+        
+        <p class="subtitle">A Dangerous Nautical Comedy Adventure!</p>
+    
+        <!-- Social Media Icons Section -->
+        <div class="social-icons">
+            <!-- Patreon (First Icon) -->
+            <a href="https://patreon.com/captainkimmer?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/PatreonLogo.png" alt="Patreon" class="social-logo">
+            </a>
+            <!-- Instagram (Second Icon) -->
+            <a href="https://www.instagram.com/captainkimmer92/" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/InstagramLogo.png" alt="Instagram" class="social-logo">
+            </a>
+            <!-- YouTube (Third Icon) -->
+            <a href="http://www.youtube.com/@CaptainKimmer" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/YoutubeLogo.png" alt="YouTube" class="social-logo">
+            </a>
+        </div>
+    
+        <hr class="nav-divider">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <div class="mobile-nav d-flex d-lg-none">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" class="btn btn-warning mobile-support-btn">Support</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexBlog.html">Captain's Log</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMap.html">Map</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMyShip.html">My Ship</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexGoals.html">The Dream</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexVideos.html">Videos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexContact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+
+<div class="belowHeader">
+
+    <div class="belowHeader">
+        <div class="container">
+            <h2 style="text-align: center; margin-top: 20px;">My First Sail - Crossing the English Channel & The Fake Rescue!</h2>
+            <p style="text-align: center; font-size: 1rem; color: gray;">02/14/2025</p>
+    
+            <style>
+                .photo-column {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    max-width: 100%;
+                }
+            
+                .photo-column img {
+                    width: 100%;
+                    max-width: 600px; /* Adjusts max width for better readability */
+                    height: auto;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                }
+            
+                .photo-column p {
+                    max-width: 600px; /* Matches the max-width of images */
+                    text-align: justify;
+                    text-indent: 30px; /* Proper indentation */
+                    font-size: 1.1rem;
+                    line-height: 1.5;
+                }
+            </style>
+            
+            <div class="photo-column">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0680.jpg" alt="IMG_0680">
+                <p>What started as a calm sail ended up a wild ride!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0632.jpg" alt="IMG_0632">
+                <p>To make it out with the tides, I had to leave around 6 AM. So I geared up, prepared for big waves, and set out.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0633.jpg" alt="IMG_0633">
+                <p>It was sad leaving Sparks Marina. I had made many friends there: Patrick, Henry, James, and Matt. Hopefully, one day I'll be back!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0634.jpg" alt="IMG_0634">
+                <p>This is a good shot here of my harness, just to give my parents some comfort that I used it.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0635.jpg" alt="IMG_0635">
+                <p>And I, simply, kept an eye on the chart plotter as I motored out of Itchenor Reach. I remember watching the chart plotter meticulously, seeing all these markers for shipwrecks and watching for shallows as the sea grew deeper and deeper, and the land slipped out of sight.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0637.jpg" alt="IMG_0637">
+                <p>I can't remember if I sorted out the autopilot before putting the bouys away, but this is me undressing the ship's docking equipment.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0638.jpg" alt="IMG_0638">
+                <p>And again, I did use the harnesses! Dad bought these fancy ones that clipped onto my life jacket. Just don't tell him that the airport cut the CO2 cartridge out. I did have a flimsy backup.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0639.jpg" alt="IMG_0639">
+                <p>On the B&G Chartplotter, it said I was passing a historic shipwreck! It's not that thing sticking out in the distance, but in the video, I thought I saw something near the water's surface.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0641.jpg" alt="IMG_0641">
+                <p>Now that we were out to sea, it was time to hoist the mainsail for the first time in my life!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0642.jpg" alt="IMG_0642">
+                <p>At first, sailing was easy. And I spent most of my time trying to figure out how to use the equipment properly, like finding this ship on the B&G chartplotter through AIS.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0643.jpg" alt="IMG_0643">
+                <p>Hmmm... it didn't show up on the B&G or my VHF internal AIS...</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0644.jpg" alt="IMG_0644">
+                <p>That's odd, because it's definitely there...</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0645.jpg" alt="IMG_0645">
+                <p>It was misty and foggy. Like the opening of a Pirates of the Carabean movie. Pretty cool!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0647.jpg" alt="IMG_0647">
+                <p>And this is where I spent most of my time, hanging on to this cable and watching the seas. If I was more experienced, I'd probably have been more productive, but the seas were a bit more on the fun side as I sailed away from Chichester and beyond the Isle of Wight.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0648.jpg" alt="IMG_0648">
+                <p>Keep note of this awesome Merry Christmas hat!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0649.jpg" alt="IMG_0649">
+                <p>After flipping a few more switches, some triangles showed up on the B&G Chartplotter! This was my AIS. And these triangles were other ships!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0651.jpg" alt="IMG_0650">
+                <p>Hello big boy!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0653.jpg" alt="IMG_0653">
+                <p>We're starting to slow down. We were averaging 6+ knots. Now we're at 2-4... The wind and current aren't favoring us. I start trying to think of things I can do to fix it.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0654.jpg" alt="IMG_0654">
+                <p>Another big ship. They're so cool!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0655.jpg" alt="IMG_0655">
+                <p>I tried to adjust the sail to get some more speed, but I failed this time. I just made it flappy, and Sam Holmes says that means it is not happy.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0656.jpg" alt="IMG_0656">
+                <p>The American flag, on the other hand, should be up to flap freely in the wind as soon as I can figure out where to put it.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0657.jpg" alt="IMG_0657">
+                <p>I couldn't hoist in the back. And my knot work still needs upgrading.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0658.jpg" alt="IMG_0658">
+                <p>But I found a line right of the mast that almost looks like it was there just for this purpose!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0659.jpg" alt="IMG_0659">
+                <p>Oh! The Brittany Ferry! Do not forget this ship! We make contact with it much later, and it becomes an important piece of an embarrassing and confusing fiasco.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0660.jpg" alt="IMG_0660">
+                <p>The sea state wasn't bad, but the autopilot kept falling off. Duct tape worked great to fix this so I could make some food!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0661.jpg" alt="IMG_0661">
+                <p>Tragedy struck. I lost my PBD Merry Christmas hat. It was my favorite hat! Please, Mr. Patrick Bet-David, if you hear me, I would love a Christmas hat! I was hoping to wear it all year round and during this entire trip across the Atlantic. Now it rests in Davy Jones' locker. The wind blew it into the sea...</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0662.jpg" alt="IMG_0662">
+                <p>We're almost in France!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0663.jpg" alt="IMG_0663">
+                <p>I tried to stay comfortable. I probably should have been reading. But it was my first sail!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0664.jpg" alt="IMG_0664">
+                <p>Hey, look over there! You sea those waters... that's English water. We are now in France!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0665.jpg" alt="IMG_0665">
+                <p>I think this photo's out of order, but it's worth noting how important it is to stay warm!</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0667.jpg" alt="IMG_0667">
+                <p>I took a victory lap around the ship, exploring the different views.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0669.jpg" alt="IMG_0669">
+                <p>And finally made some more noodles. Half sea water this time.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0670.jpg" alt="IMG_0670">
+                <p>Hmm... too little salt. I don't have the mixture down right yet.</p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0671.jpg" alt="IMG_0671">
+                <p>It's getting dark. Time to start preparing for night sailing. How bad could that be... right...?<p>
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0672.jpg" alt="IMG_0672">
+                <p>This is where things got real. And, sadistically, quite fun. In the middle of the night, everything that could go wrong did go wrong. For some reason, I wasn't quite aware of the switches needed to keep my AIS running, and at times I thought I was safe, I was misguided by an empty B&G Chartplotter. Once I switched it on, I realized I had been in a shipping lane and was surrounded by ships. Very dangerous, but not the worst of it. The sea had picked up. The wind was 30+ knots. Sometimes 40. And yes, I didn't mind a bit, but the damn autopilot wouldn't stay on the bench! It had lost a piece that kept it in place.</p>
+
+<p>Later, I'll learn that Sam Holmes went through so many of these things. And a quick note on Sam Holmes—I’m sure he's great. I learn a lot from his videos. He's who I watch. But I've mentioned him a few times, and as a man, I can't go on longer without stating I'm not fanboying out here. He's who I watch. He's who everyone who sails watches. And he is very helpful! So is Sailor James at times.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0673.jpg" alt="IMG_0673">
+                <p>Back to our regularly scheduled program. The seas were much larger than my ship, and without autopilot, the ship was nearly impossible to negotiate... nearly.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0674.jpg" alt="IMG_0674">
+                <p>Regrettably, my favorite sail—the sail I used just two days ago for my first time out on Itchenor Reach—tore out its eyelet. It was unusable. And even worse, not that I understood this at the time, as it sat there flapping in the wind—unfurlable as it couldn't be tied down, and any twist around the furler would untwist in the wind—it made the ship look like an incredible wreck site. Like a man going down. Like big trouble. And this caused me more trouble than I was actually in. Because I wasn't really in trouble. I loved the seas. This was great! And I had an engine with enough fuel to take me back to Cherbourg easily. 
+
+                    Still, I had to harness up and try to get the main down before it was damaged. I succeeded enough in this task. And I quite enjoyed running up and down from bow to stern, watching the crazy waves try to toss me with my harness off the ship. Again... this is exactly what I wanted. Adventure! I only wish I had more of it on camera, but I wasn't reckless, despite what some might think. I focused solely on the task at hand.</p>
+                    
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0676.jpg" alt="IMG_0676">
+                
+                <p>The motoring part wasn't fun. I kept getting splashed in the face, and it was boring. I tried several times to tie up the tiller and go under, but tying up the tiller never kept the ship steady, and going under in these seas was a game of bumper cars with the ship and my body that made me seasick. Another sick advantage of having blood cancer—I quite enjoyed throwing up these days. Never for fun, but the sensation is slightly pleasurable for me. I wasn't put off by the nausea at all.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0677.jpg" alt="IMG_0677">
+                
+                <p>Fun seas, wish I could keep the ship straight without my hands to enjoy them better.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0678.jpg" alt="IMG_0678">
+
+                <p>NOW THIS IS CRITICAL!</p>
+
+                <p>Many were aware of me out at sea by this time. Remember what I said about the shipping lanes, AIS being down, and my sail torn to flap in the wind? I had drawn a great deal of attention to myself. And though I was more than fine—actually bored, as was very apparent in the videos—the ship didn't look well. But besides the sail, she was. Wow, could Kite handle these waves like they were nothing!</p>
+                
+                <p>Anyways, this is where things started to get weird. Cherbourg Harbour sent the Brittany Ferry over to have a look once my AIS was back on. I'm sure my route looked ridiculous, as every time I left the tiller, I spun and spun in the seas. Brittany Ferry VHF'd me on 16, and we switched to 6 to chat. This took a bit to figure out—I had to hold the radio high for it to work, which I didn't know, and my ship collision alarm was definitely working, as Brittany Ferry kept shifting into my course to get my attention. Incredibly nimble for such a large ship. Here's how the conversation went:</p>
+                
+                <p><strong>Brittany Ferry:</strong> "Cherbourg sent me down here to say hello. Are you okay?"<br>
+                <strong>ME:</strong> "Yes, I'm okay. I'm under gas power."<br>
+                <strong>Brittany Ferry:</strong> "Where is your destination?"<br>
+                <strong>ME:</strong> "Cherbourg, unless there's a closer port."<br>
+                <strong>Brittany Ferry:</strong> "Ah, no, Cherbourg is safest. I'm going to ask one last time, are you okay?"<br>
+                <strong>ME:</strong> "Definitely am, I'm motoring."<br>
+                <strong>Brittany Ferry:</strong> "How many on board?"<br>
+                <strong>ME:</strong> "1. Me."<br>
+                <strong>Brittany Ferry:</strong> "Okay, enjoy your travels to Cherbourg. Stay monitoring channel 16, Cherbourg will want to check on you as you get closer."</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0679.jpg" alt="IMG_0679">
+
+<p>Now take note of this plotter. You'll notice a few things that will be much more apparent over Marine Traffic and the video footage I have when posted. One thing you'll see is that I'm by myself. Brittany Ferry is gone, and if you look at the land, you can surmise that I'm about 15 miles away from shore. I've been motoring for hours. Probably 10 or more. I believe I started the engine around 3 or 4 am and arrived in Cherbourg at 6 or 7 pm. So, again, by this time, motoring by myself (boring) for hours.</p>
+
+<p>Another thing you'll see is a hollow white triangle near Cherbourg. That triangle is a rescue boat—the rescue boat you'll see in the next image. But before that, let me fill you in on VHF communications on my trip down to Cherbourg between the Harbour and myself.</p>
+
+<p><strong>Cherbourg Harbor:</strong> "Hello, Kite. Can you read me?"<br>
+<strong>Me:</strong> "Yes. This is Kite. I can hear you."<br>
+<strong>Cherbourg Harbor:</strong> "Are you alright?"<br>
+<strong>Me:</strong> "Yes. Brittany Ferry checked in on me earlier, and I'm motoring to Cherbourg soon. Do I come in on the west or east side?"<br>
+<strong>Cherbourg Harbor:</strong> "West side is okay. Please stay on channel 16, we will be in contact with you every 30 minutes."</p>
+
+<p>... 30 minutes later ...</p>
+
+<p><strong>Cherbourg Harbor:</strong> "Kite, Kite, Cherbourg Harbour—are you still okay?"<br>
+<strong>Me:</strong> "Yes. I'm fine."<br>
+<strong>Cherbourg Harbor:</strong> "Do you need docking assistance?"<br>
+<strong>Me:</strong> "Sure. I'm single-handing, that would be nice."</p>
+
+<p>Now, for me, docking assistance was like Matt helping back at Sparks Marina—it was a man at the dock that I threw a rope to. But what I heard Cherbourg Harbor say next set me on edge.</p>
+
+<p><strong>Cherbourg Harbor:</strong> "I'll send a rescue boat out."<br>
+<strong>Me:</strong> "What? No. No rescue. I repeat, no rescue!"</p>
+
+<p>Radio silence.</p>
+
+<p>The white triangle started bolting out from land into the sea, heading directly towards me. Damn, I knew what this meant. They were going to try to board my ship and charge me thousands of dollars for no reason at all under the guise of a rescue operation. I had been motoring just fine for 10 hours. There was only 1 or 2 left. Are they are bored as I am?</p>
+
+<p>When they arrived, they danced around my ship like a peacock for 20 minutes. I didn't wave or acknowledge them. I kept my course as directly toward Cherbourg as possible. I didn’t need rescue, and only a command from the Harbour Master would make me stop. And the only reason I would comply was because I was new and didn't know the rules. I know better now.</p>
+
+<p>After their odd display, they attempted several times to near my ship. Again, no eye contact. I didn’t slow down, I just kept moving forward at speed—bored out of my mind, steering lazily with my foot.</p>
+
+<p>But eventually, the order came.</p>
+
+<p><strong>Cherbourg Harbor:</strong> "Kite, Kite, can you stop your engine so the team can board?"<br>
+<strong>Me:</strong> "Why? We're an hour away, this is docking assistance."</p>
+
+<p>Radio silence. And like a fool, not knowing better, as you can tell from the next image, I shut my engine down and let them board.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0681.jpg" alt="IMG_0683">
+
+<p>It was a funny "rescue" operation. I had to stop the ship to help them get on board. And though they were bigger and stronger men than I, they were older and far less athletic. I actually had to physically grab and pull them onto the ship. No doubt they knew their stuff—they were professionals. But I figured they must have been doing this for practice. They must not have had a real rescue in a while.</p>
+
+<p>They took over the tiller to steer, which I didn't like, but it freed me up. I went below, grabbed the duct tape, and held it out to one of the two guys on board, pointing to the head sail. He shook his head. After all the work I had done running up and down the bow and stern in the storm to protect the rest of the sail, now that I actually had help, they refused. The seas were too rough for him, even with his helmet and all his equipment, to brave taping down the head sail.</p>
+
+<p>No, they were just going to man the tiller and dock. It was a glorified taxi service. As long as they didn’t charge me, I was fine with it.</p>
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0681.jpg" alt="IMG_0681">
+
+<p>One of the men asked me if I needed to sleep. No, I was wide awake. And though I liked the gentlemen—liking rescue crews in general—I did pull out my phone to protect myself and pontificate on why I wasn’t operating the tiller. </p>
+
+<p>"Why am I not driving? Why are you here—on board?"</p>
+
+<p>"No English—" That felt like a lie.</p>
+
+<p>When the other crew member saw my phone, he got giddy, pointed to the rescue team on the ship, and asked if I could film them coming in. Sure, why not. He radioed in to tell the team to go, and the rescue boat came flying around.</p>
+
+<p>"Film, film!"</p>
+
+<p>I did. But in the film, you can hear me stating, "Here's the rescue team, I'm still very confused as to why they're here..." But I filmed for them—as long as I wasn’t going to get charged.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0684.jpg" alt="IMG_0684">
+
+<p>I couldn't deny it was nice to have them operate the tiller. It allowed me to enjoy the beauty of the seas. I chuckled to myself a little as the two old men had to take turns on the tiller during our two-hour trip, after I had been operating it for ten hours. But I am 33, and though cancer may seem like a disadvantage, I was heavily prescribed steroids—so that’s cheating, I guess. And I don't mean to disparage the gentlemen, in distress I'm more than sure I'd welcome their company and find them competent and up to the task. It felt like being baby sat by two men getting worn out by the tiller.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0685.jpg" alt="IMG_0685">
+
+<p>More beautiful seas.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0686.jpg" alt="IMG_0686">
+                
+                <p>The Harbor was in site!</p>
+               
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0687.jpg" alt="IMG_0687">
+                
+                <p>Not only that, there were dolphins in the water! It is possible I glimpsed them on video, but I've failed to find them on camera so far. They were definitely swimming with Kite. I take this as a good sign, and it must be somewhat rare—or maybe the rescue crew was just being entertaining—because they were almost more excited to see the dolphins than I was.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0688.jpg" alt="IMG_0688">
+
+                <p>Once I got in, France's border officers wanted what became a standard customs chat, but before that was allowed, I gathered everyone involved to politely thank them—while sternly getting to the bottom of business. "Are you trying to charge me for taxiing my ship in? Because there was no need." </p>
+
+                <p>"Huh? No. No charge." </p>
+                
+                <p>"No charge!?"</p>
+                
+                <p>Well, I was instantly happier with them all, thanked them again more enthusiastically, and then gave the border officers my attention. They informed me that my lights were off last night, and Justine mentioned that she was contacted about this too. This still confuses me—they were on now, and I don't remember switching them on other than initially when it turned dark. The rescue crew definitely didn’t. Hmmm. I guess I won’t rely on the switchboard and will use my eyes instead. Redundancies.</p>
+                
+                
+                <p>After they told me to be safe, I assessed the damage to the ship. The headsail needed repairs.</p>
+
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0689.jpg" alt="IMG_0689">
+                
+                <p>The inside was a mess. And I didn't know it yet, but the other water bladder was ruined. Maybe it always was from the overfill, though. That’s both water tanks out.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0691.jpg" alt="IMG_0691">
+                
+                <p>Damn, I did look tired.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0692.jpg" alt="IMG_0692">
+                
+                <p>But the next day, I was ready to go!</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0694.jpg" alt="IMG_0694">
+                
+                <p>And, though I didn't want to spend any more money, I knew fixing the ship immediately was the priority. So I recovered the sail.</p>
+                
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0695.jpg" alt="IMG_0695">
+                
+                <p>Goran, the Swedish man who owns this self-furling mainsail, came out and asked about my needing rescue. "Needing" is a strong statement, I said. So I repeated what I had been saying in my head so many times: I motored over here for 10-12 hours. Pretty sure I could have handled the last two. That’s all they did—motor here. At least they're not charging me.</p>
+                
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0696.jpg" alt="IMG_0696">
+
+    <p>Goran manned the Anna-Lisa, which had been docked here in Cherbourg for some time. He quickly became a very good friend of mine, and I suspect he may even become a part of my regular correspondence during my travels. He was orderly, kind, had a beautiful ship, and despite being very different people, we shared so much in common. He found me brave, and I found him kind. We were both adventurers, obviously.</p>
+
+
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0697.jpg" alt="IMG_0697">
+
+    <p>After a good shower.</p>
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0698.jpg" alt="IMG_0698">
+    <p>A man at the restrauntn above the harbor makes the best coffee I've had in Europe so far! Great man. Great coffee.</p>
+
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0699.jpg" alt="IMG_0699">
+    <p>And coffee reinvigorates the soul!</p>
+
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0700.jpg" alt="IMG_0700">
+
+    <p>I need a whole tank of gas now, so I'm departing to the tanks.</p>
+    
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0702.jpg" alt="IMG_0702">
+    
+    <p>This broke my heart. An old man helped dock, yet I offered to pull the ship back to make room for the ship he was crewing. I trustingly let him manage the stern, which was close to the extending part of the dock. It hit a bolt... I let them all know about it, but I kept my frustration hidden. It was my fault, just like with the rescue team. The ship is my responsibility. If I want the stern safe, I manage it. I control the ship. That’s what it means to be Captain. I'll fix the chunk at the Canary Islands.</p>
+    
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0703.jpg" alt="IMG_0703">
+    <p>The gas pumps had to be dropped down to the ships.</p>
+
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0704.jpg" alt="IMG_0704">
+    <p>And then hauled back up, which I have on video. The diesel here was green, which threw me into a panic as Sparks Marina's was pink. But a quick ChatGPT search informed me that this was normal.</p>
+
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0705.jpg" alt="IMG_0705">
+    <p>The ship was under my control again.</p>
+
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0706.jpg" alt="IMG_0706">
+
+    <p>And I had time to finally do some push-ups. Before entering the UK, I was doing 500 a day (roids). For a week, I had done almost none. So I got 100 in.</p>
+    
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0708.jpg" alt="IMG_0708">
+    
+    <p>Then I attempted to fold up the big Genoa, which started off well.</p>
+    
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0711.jpg" alt="IMG_0711">
+    
+    <p>It ended messy. And I had to unwind this 30 minutes later at the sail shop anyway.</p>
+    
+
+
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0712.jpg" alt="IMG_0712">
+    <p>ChatGPT - below - says this spider isn't as dangerous as I thought. I killed it anways. </p>
+
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0713.jpg" alt="IMG_0713">
+    
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0714.jpg" alt="IMG_0714">
+    <p>Then took a look at my other sails, wondering if I shoul hoist one. </p>
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0715.jpg" alt="IMG_0715">
+    <p>Deciding to wait, I went to speak to the experts who think the sail I was using is far too large for the sailing I plan on doing. Furling it workable, really isn't optimal they say. Recommending my smaller sail.</p>
+
+    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0716.jpg" alt="IMG_0716">
+
+<p>Of course, I had a wonderful night with Goran, who took me out. He made me get out of my sailor's suit, which did me good. We had a proper dinner, with multiple drinks and courses.</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0721.jpg" alt="IMG_0721">
+
+<p>Then, the next night, he shoots me these texts!</p>
+
+<img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/02_CherbergFrance/TheFakeRescueBlog/IMG_0720.jpg" alt="IMG_0720">
+
+<p>Which led me to this page, with videos and photos of Kite—looking like a lady in distress out in the storm, with the rescue crew heroically saving the day. So that’s what all the dancing of the ship was about. They were filming, getting good shots in. It was a PR stunt. And thousands and thousands of people had seen it.</p>
+
+<p>It was the first PR of the trip. I was a laughingstock—the victim of a fake rescue stunt. At least it was heavily localized to those who spoke French... but then, how did Goran find it?</p>
+
+<p>What an adventure. Glad I filmed enough of my side of the story, and hopefully, I can even track down VHF transcripts. This might be good for me in the long run. And I wasn’t too put off—I have a tremendous sense of humor. It was kind of funny, in a sitcom way.</p>
+
+<p>For those of you interested, here are their video links lol. I won’t get to respond with footage for a few weeks, I don’t think.</p>
+
+<p><a href="https://www.facebook.com/snsmgoury" target="_blank">SNSM Goury Facebook Page</a></p>
+
+
+
+                
+            
+             
+
+
+
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .photo-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .photo-column img {
+            width: 90%;
+            max-width: 600px; /* Ensures images are centered and look great */
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+    
+        
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Captain Kimmer's Nautical Comedy Adventure</h2>
+    
+            <!-- Social Media & Beer Animation Section -->
+            <div class="footer-icons">
+                <!-- Patreon -->
+                <a href="https://patreon.com/captainkimmer?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank">
+                    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/PatreonLogo.png" alt="Patreon" class="footer-logo">
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/captainkimmer92/" target="_blank">
+                    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/InstagramLogo.png" alt="Instagram" class="footer-logo">
+                </a>
+                <!-- YouTube -->
+                <a href="http://www.youtube.com/@CaptainKimmer" target="_blank">
+                    <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/YoutubeLogo.png" alt="YouTube" class="footer-logo">
+                </a>
+                <!-- Beer Animation (Buy Me a Drink) -->
+                <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
+                    <img id="animatedBeerFooter" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" alt="Buy Me a Drink" class="footer-logo">
+                </a>
+            </div>
+    
+            <p>All Rights Reserved</p>
+            <p>&copy; 2025</p>
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Favicons/favicon.ico" alt="Captain Kimmer Logo" class="footer-logo">
+        </div>
+    </footer>
+    
+    <script>
+        // Beer Animation Script for Footer
+        const beerImagesFooter = [
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
+        ];
+    
+        let beerIndexFooter = 0;
+        function animateBeerFooter() {
+            document.getElementById("animatedBeerFooter").src = beerImagesFooter[beerIndexFooter];
+            beerIndexFooter = (beerIndexFooter + 1) % beerImagesFooter.length;
+        }
+    
+        setInterval(animateBeerFooter, 300); // Change every 300ms
+    </script>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const currentPath = window.location.pathname;  // Get the current page path
+        const navLinks = document.querySelectorAll('.navbar .nav-link');  // Select all nav links
+    
+        navLinks.forEach(link => {
+            // Check if it's the homepage or if the link matches the current page path
+            if ((currentPath === '/' && link.href === 'https://captainkimmer.com/') || link.pathname === currentPath) {
+                link.classList.add('active');  // Add the 'active' class to underline
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

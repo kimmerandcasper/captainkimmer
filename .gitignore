@@ -1,2 +1,18 @@
+# Ignore .icloud files
+*.icloud
+
+# Ignore other common files/folders
+# Ignore Mac system files
+.DS_Store
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+
+# Ignore node_modules (for Node.js projects)
+node_modules/
+
+# Ignore Python bytecode files
+*.pyc
 .DS_Store
 MyShipPhotos/.DS_Store

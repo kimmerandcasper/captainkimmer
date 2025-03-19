@@ -1,66 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- ✅ Favicon Links (Unchanged) -->
-    <link rel="icon" type="image/x-icon" href="/Favicons/favicon.ico">
-    <link rel="shortcut icon" href="/Favicons/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Favicons/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/main/Favicons/favicon.ico">
-
-    <!-- ✅ Essential Meta Tags for SEO -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure! Join us for high-seas laughter, pirate performances, and unforgettable voyages.">
-    <meta name="keywords" content="Captain Kimmer, Nautical Comedy, Pirate Shows, High-Seas Adventure, Sunset Cruises, Ocean Fun">
-    <meta name="author" content="Captain Kimmer Team">
-    
-    <!-- ✅ Open Graph Tags for Social Media -->
-    <meta property="og:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
-    <meta property="og:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
-    <meta property="og:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
-    <meta property="og:url" content="https://CaptainKimmer.com">
-    <meta property="og:type" content="website">
-    
-    <!-- ✅ Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
-    <meta name="twitter:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
-    <meta name="twitter:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
-
+    <head>
+        <!-- ✅ Favicon Links (Unchanged) -->
+      <link rel="icon" type="image/x-icon" href="/Favicons/favicon.ico">
+      <link rel="shortcut icon" href="/Favicons/favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Favicons/favicon.ico" type="image/x-icon">
+      <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/main/Favicons/favicon.ico">
+      
+      <!-- ✅ Essential Meta Tags for SEO -->
+      <meta charset="UTF-8">
+      <meta name="description" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure! Join us for high-seas laughter, pirate performances, and unforgettable voyages.">
+      <meta name="keywords" content="Captain Kimmer, Nautical Comedy, Pirate Shows, High-Seas Adventure, Sunset Cruises, Ocean Fun">
+      <meta name="author" content="Captain Kimmer Team">
+      
+      <!-- ✅ Phone Orientation Hold Portrait -->
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+      
+      <!-- ✅ Open Graph Tags for Social Media -->
+      <meta property="og:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
+      <meta property="og:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
+      <meta property="og:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
+      <meta property="og:url" content="https://CaptainKimmer.com">
+      <meta property="og:type" content="website">
+      
+      <!-- ✅ Twitter Card Tags -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="Captain Kimmer - A Dangerous Nautical Comedy Adventure">
+      <meta name="twitter:description" content="Join Captain Kimmer for an unforgettable oceanic comedy adventure. Laughter, pirates, and high-seas fun await!">
+      <meta name="twitter:image" content="https://kimmerandcasper.github.io/captainkimmer/CaptainKimmerLogo.png">
+      
+      <!-- Lock portrait mode -->
+      <script>
+          if (window.innerHeight > window.innerWidth) {
+              document.body.classList.add("portrait");
+          } else {
+              document.body.classList.remove("portrait");
+          }
+      
+          window.addEventListener('resize', function() {
+              if (window.innerHeight > window.innerWidth) {
+                  document.body.classList.add("portrait");
+              } else {
+                  document.body.classList.remove("portrait");
+              }
+          });
+      </script>
+     
     <title>Captain Kimmer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
-
+    
         body {
             font-family: 'Arial', sans-serif;
             color: #333;
+            margin: 0;
+            padding: 0;
         }
+    
         .header {
             background-color: #005f73;
             color: white;
             padding: 20px 0;
             text-align: center;
-            position: relative;
+            left: 0%;
+            width: 100%;
+            position: fixed;
         }
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
+
+        /* Title centered */
         .header h1 {
             font-family: 'Amatic SC', cursive;
             font-size: 4rem;
-            margin: 0;
-            display: flex;
-            align-items: center;
+            transform: translate(-50%, -50%);  /* Shift the element back by half of its own width and height */
+            left: 50%;
+            top: 7.5%;
+            position: fixed;
+            z-index: 1;
         }
-        .header p {
-            font-size: 1.2rem;
-            margin-top: 5px;
+
+        /* For the subtitle below the title */
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 80px;
         }
+
         .nav-divider {
             width: 80%;
             margin: 10px auto;
@@ -68,94 +95,308 @@
             height: 1px;
             background-color: white;
         }
+
+        .navbar {
+            margin-top: 5px;
+        }
+
         .navbar .nav-link {
             color: white;
             font-weight: bold;
             transition: color 0.3s;
         }
+
         .navbar .nav-link:hover {
             color: #ffdd57;
         }
+
+        /* Logo Positioning - Top left of the page, adjusted within video container */
         .logo {
-            width: 60px;
-            height: auto;
-        }
+    width: 80px;
+    height: auto;
+    position: absolute; /* Position it absolutely within the header */
+    left: 30%; /* Center it horizontally */
+    top: 8%; /* Adjust this value to control the vertical distance */
+    padding: 10px;
+}
+        /* Support Button Positioning - Top right of the page, adjusted within video container */
         .support-btn {
             font-size: 1.2rem;
             padding: 5px 15px;
+            position: absolute;
+            right: 29%;  
+            top: 15%;
+            padding: 10px;
         }
+
         .video-section {
             padding: 40px 0;
             text-align: center;
         }
+
         .video-container {
             max-width: 800px;
             margin: auto;
         }
+
         .video-container iframe {
             border: 5px solid black;
         }
+
         .services, .contact, .support {
             padding: 60px 20px;
         }
+
         .footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer h2,
+.footer p {
+    margin: 5px 0; /* Ensures spacing between the elements */
+}
+
+.footer-logo {
+    width: 100px;  /* You can adjust the size of the logo */
+    margin-top: 20px;
+}
+
+          
+
+    
+        /* Gallery Styles */
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
         }
-        .footer img {
-            position: absolute;
-            width: 80px;
-            bottom: 10px;
-        }
-        .footer .left-logo {
-            left: 10px;
-        }
-        .footer .right-logo {
-            right: 10px;
+    
+        .gallery-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px; /* Control the max height of images */
+            object-fit: cover; /* Ensure the aspect ratio is preserved */
+            border: 5px solid #fff; /* Add a border for better visibility */
         }
 
-        /* ✅ Mobile-Specific Styling */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                gap: 5px;
-            }
+        /* Centered button layout with correct spacing */
+.gallery-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adds spacing between buttons */
+}
+
+.gallery-buttons .btn {
+    font-size: 1rem;
+    padding: 8px 15px;
+}
+
+/* Slightly increase arrow button size */
+#prevBtn, #nextBtn {
+    font-size: 1.2rem;
+}
+
+        .navbar-nav .nav-item {
+    margin-left: 20px; /* Adjust the value to your preference */
+}
+
+.navbar .nav-link.active {
+    text-decoration: underline;
+    font-weight: bold; /* Optional: make it bold to highlight */
+}
+
+/* Social Icons Styling */
+.social-icons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    border: 2px solid black; /* Black border added */
+    border-radius: 5px; /* Optional: Rounds the corners slightly */
+    padding: 3px; /* Adds space inside the border */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.social-logo:hover {
+    transform: scale(1.2);
+    border-color: #ffdd57; /* Changes border color on hover (optional) */
+}
+
+
+    
+        .belowHeader {
+    padding-top: 19%;  /* Same effect as margin-top, pushes down the content */
+}
+
+      /* ✅ Mobile-Specific Styling */
+      @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.5rem;
             }
+
             .header p {
                 font-size: 1rem;
             }
+
             .logo {
-                width: 40px;
-                height: auto;
-            }
+        width: 70px;
+        position: fixed;  /* Fix the logo in place */
+        left: 5%;  /* Move it slightly from the left edge */
+        top: 2%;  /* Adjust vertical position */
+        transform: translateY(0); /* No vertical offset */
+        z-index: 1049;  /* Make sure it's above other elements */
+    }
+
+      /* For the subtitle below the title */
+      .subtitle {
+            font-size: 1.5rem;
+            margin-top: 70px;
+        }
+
             .video-container iframe {
                 width: 100%;
                 height: 250px;
             }
+
             .services, .contact, .support {
                 padding: 30px 10px;
             }
-        }
+
+            .navbar-toggler {
+        position: fixed;  /* Position it fixed relative to the viewport */
+        right: 5%;  /* Move it to the right edge of the screen */
+        top: 4%;    /* Move it to the top of the page */
+        transform: translateY(0); /* No vertical offset */
+        z-index: 1050;  /* Make sure it stays on top of other elements */
+    }
+    .mobile-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-support-btn {
+        display: inline-block; /* Ensure it's inline to allow centering */
+        margin: 1px auto; /* Add margin to center it */
+    }
+
+    .navbar-nav .nav-item {
+    margin-left: 0px; /* Adjust the value to your preference */
+}
+
+.footer-logo {
+        width: 80px; /* Adjust the logo size for mobile if needed */
+    }
+
+ 
+    .belowHeader {
+    padding-top: 60%;  /* Same effect as margin-top, pushes down the content */
+}
+
+    }
+
     </style>
+    
 </head>
 <body>
     
+    <header class="header">
+        <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
+            <img id="animatedBeerJS" src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" 
+                 alt="Buy Me a Drink" class="logo">
+        </a>
+        
+        <script>
+            const beerImages = [
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
+                "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
+            ];
+            
+            let index = 0;
+            function animateBeer() {
+                document.getElementById("animatedBeerJS").src = beerImages[index];
+                index = (index + 1) % beerImages.length;
+            }
+        
+            setInterval(animateBeer, 300); // Change every 300ms
+        </script>
+        
+        <h1>Captain Kimmer</h1>
+        <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" 
+           class="btn btn-warning btn-lg support-btn d-none d-lg-inline">
+           Support
+        </a>
+        
+        <p class="subtitle">A Dangerous Nautical Comedy Adventure!</p>
+    
+        <!-- Social Media Icons Section -->
+        <div class="social-icons">
+            <!-- Patreon (First Icon) -->
+            <a href="https://patreon.com/captainkimmer?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/PatreonLogo.png" alt="Patreon" class="social-logo">
+            </a>
+            <!-- Instagram (Second Icon) -->
+            <a href="https://www.instagram.com/captainkimmer92/" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/InstagramLogo.png" alt="Instagram" class="social-logo">
+            </a>
+            <!-- YouTube (Third Icon) -->
+            <a href="http://www.youtube.com/@CaptainKimmer" target="_blank">
+                <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/YoutubeLogo.png" alt="YouTube" class="social-logo">
+            </a>
+        </div>
+    
+        <hr class="nav-divider">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <div class="mobile-nav d-flex d-lg-none">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="https://kimmerandcasper.github.io/captainkimmer/indexSupport.html" class="btn btn-warning mobile-support-btn">Support</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexBlog.html">Captain's Log</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMap.html">Map</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexMyShip.html">My Ship</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexGoals.html">The Dream</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexVideos.html">Videos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kimmerandcasper.github.io/captainkimmer/indexContact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <div class="belowHeader"></div>
     <section id="kite-gallery" class="video-section">
         <div class="container">
             <h2>Kite</h2>
-    
-            <!-- Gallery Navigation -->
-            <div class="gallery-nav">
-                <button class="btn btn-dark" id="prevBtn">←</button>
-                <button class="btn btn-dark" id="nextBtn">→</button>
-            </div>
     
             <!-- Photo Gallery -->
             <div id="gallery" class="photo-gallery">
@@ -164,8 +405,10 @@
     
             <!-- Exterior & Interior Buttons -->
             <div class="gallery-buttons text-center">
+                <button class="btn btn-dark" id="prevBtn">←</button>
                 <button class="btn btn-outline-dark" id="exteriorBtn">Exterior</button>
                 <button class="btn btn-outline-dark" id="interiorBtn">Interior</button>
+                <button class="btn btn-dark" id="nextBtn">→</button>
             </div>
     
             <!-- Description of Sparkman & Stephens 34 -->
@@ -178,40 +421,111 @@
     
     <script>
         const exteriorImages = [
-            "path-to-exterior-1.jpg",
-            "path-to-exterior-2.jpg",
-            "path-to-exterior-3.jpg",
-            // Add more exterior images here
-        ];
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/1.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/2.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/3.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/4.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/5.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/6.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/7.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/8.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/9.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/10.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/11.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/12.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/13.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/14.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/15.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/16.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/17.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/18.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/19.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/20.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/21.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/22.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/23.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/24.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/25.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/26.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/27.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/28.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/29.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/30.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Exterior/31.JPG"
+];
+
     
-        const interiorImages = [
-            "path-to-interior-1.jpg",
-            "path-to-interior-2.jpg",
-            "path-to-interior-3.jpg",
-            // Add more interior images here
-        ];
+const interiorImages = [
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/40.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/41.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/42.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/43.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/44.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/45.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/46.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/47.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/48.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/49.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/50.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/51.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/52.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/53.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/54.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/55.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/56.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/57.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/58.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/59.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/60.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/61.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/62.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/63.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/64.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/65.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/66.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/67.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/68.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/69.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/70.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/71.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/72.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/73.JPG",
+    "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/MyShip/Interior/74.JPG"
+];
+
     
         let currentIndex = 0;
         let currentGallery = exteriorImages;
     
-        // Load the gallery with images
-        function loadGallery() {
-            const galleryDiv = document.getElementById('gallery');
-            galleryDiv.innerHTML = `<img src="${currentGallery[currentIndex]}" alt="Gallery Image" class="gallery-image">`;
+        // Preload all images
+        function preloadImages() {
+            let allImages = [...exteriorImages, ...interiorImages];
+            allImages.forEach(src => {
+                let img = new Image();
+                img.src = src;
+            });
         }
     
-        // Show next image
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % currentGallery.length;
-            loadGallery();
-        });
-    
-        // Show previous image
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-            loadGallery();
-        });
-    
+       // Load the gallery with images
+function loadGallery() {
+    const galleryDiv = document.getElementById('gallery');
+    galleryDiv.innerHTML = `<img src="${currentGallery[currentIndex]}" alt="Gallery Image" class="gallery-image">`;
+}
+
+// Show next image
+document.getElementById('nextBtn').addEventListener('click', (event) => {
+    event.preventDefault();  // Prevent the page jump
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    loadGallery();
+});
+
+// Show previous image
+document.getElementById('prevBtn').addEventListener('click', (event) => {
+    event.preventDefault();  // Prevent the page jump
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    loadGallery();
+});
+
         // Exterior Button Clicked
         document.getElementById('exteriorBtn').addEventListener('click', () => {
             currentGallery = exteriorImages;
@@ -226,16 +540,35 @@
             loadGallery();
         });
     
-        // Initialize the gallery with exterior images
+        // Initialize the gallery with exterior images and preload all images
+        preloadImages();
         loadGallery();
     </script>
+    
+    
 
-    <footer class="footer">
-        <p>&copy; 2024 Captain Kimmer's Nautical Comedy Adventure. All Rights Reserved.</p>
-        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/main/CaptainKimmerLogo.png" alt="Captain Kimmer Logo" class="left-logo">
-        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/main/CaptainKimmerLogo.png" alt="Captain Kimmer Logo" class="right-logo">
+     <footer class="footer">
+        <div class="footer-content">
+            <h2>Captain Kimmer's Nautical Comedy Adventure</h2>
+            <p>All Rights Reserved</p>
+            <p>&copy; 2025</p>
+            <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Favicons/favicon.ico" alt="Captain Kimmer Logo" class="footer-logo">
+        </div>
     </footer>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const currentPath = window.location.pathname;  // Get the current page path
+        const navLinks = document.querySelectorAll('.navbar .nav-link');  // Select all nav links
+    
+        navLinks.forEach(link => {
+            // Check if it's the homepage or if the link matches the current page path
+            if ((currentPath === '/' && link.href === 'https://captainkimmer.com/') || link.href.includes(currentPath)) {
+                link.classList.add('active');  // Add the 'active' class to underline
+            }
+        });
+    </script>
+    
 </body>
 </html>
