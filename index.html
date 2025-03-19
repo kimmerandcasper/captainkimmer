@@ -54,7 +54,8 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
-    
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
         body {
             font-family: 'Arial', sans-serif;
             color: #333;
@@ -86,6 +87,8 @@
 
         /* For the subtitle below the title */
         .subtitle {
+            font-family: 'Merriweather', serif;
+            color: #bdd3d7;
             font-size: 1.5rem;
             margin-top: 10px;
         }
@@ -353,7 +356,7 @@
                     
                 </div>
 
-        <p class="subtitle">In the Prequel of the Greatest Adventure in Human History!</p>
+        <p class="subtitle">At the Prequel of the Greatest Adventure in Human History!</p>
     
     
     
@@ -387,6 +390,9 @@
     <section id="featured-video" class="video-section">
         <div class="container">
             <!-- Dynamic Image Title -->
+            <h2 class="page-header" style="text-align: center; font-weight: bold; font-size: 2rem; margin-bottom: 20px;">
+                Hi, I'm Captain Kimmer...
+            </h2>
             <h3 id="imageTitle" style="text-align: center; margin-bottom: 10px;">Ahoy! 🚢⚓</h3>
     
             <!-- Photo Gallery -->
@@ -404,25 +410,44 @@
             </div>
     
             <div class="welcome-text" style="max-width: 800px; margin: 20px auto 0; text-align: left;">
-                <p style="text-align: center; font-weight: bold;">Welcome to Captain Kimmer O'Reilly's Nautical Comedy Adventure.</p>
-                
-                <p>
-                    Enjoy the chaotic journey as Kimmer purchases his ship sight unseen from a foreign nation, with plans to sail it back across the Atlantic to America, while nearly everything that can go wrong does. Like many patients who survive cancer, Kimmer found himself searching for meaning and deciding that the high seas might have the answers! Being exceptionally eccentric and as - it turns out - a bit of a trouble magnet, Kimmer flies to England to purchase a ship he's never seen, moves onto the ship and nearly burns it down that night, loses power setting his 34-foot ship adrift in a harbor of 20,000 moored ships, anchors out a storm, and for his first time ever sailing goes out into the English Channel where he meets a vicious 40-knot sea with waves much larger than his ship. All caught on camera for you. And the footage is coming soon.
+                <p style="text-align: center; font-weight: bold; font-size: 1.5rem; margin: 30px auto 10px; max-width: 800px;">
+                    Welcome to the greatest adventure in history!
                 </p>
                 
-                <p>For now, enjoy the Captain Logs where there are plenty of fun mini blogs about Captain Kimmer's journey so far.</p>
-                
-                <!-- Centered Button -->
-                <div style="text-align: center; margin-top: 10px;">
-                    <a href="https://kimmerandcasper.github.io/captainkimmer/indexBlog.html" class="btn btn-primary">Captain's Log</a>
-                </div>
-            
-                <!-- Added space below the button -->
-                <br>
-            
-                <p>
-                    And any support one can give with a follow on Instagram or a donation to help with ship repairs, equipment, and stocking goes a long way to keeping me, Captain Kimmer, safe. Thanks for being here!
+                <p style="text-align: justify; line-height: 1.8; font-size: 1.2rem; max-width: 800px; margin: 30px auto;">
+                    What is the greatest adventure in history?” you ask.
                 </p>
+                
+                <p style="text-align: justify; line-height: 1.8; font-size: 1.2rem; max-width: 800px; margin: 30px auto;">
+                    That's a long story, so let me first tell you, simply, how the prequel - the beginning of the beginning - goes.
+                </p>
+                
+                <p style="text-align: justify; line-height: 1.8; font-size: 1.2rem; max-width: 800px; margin: 30px auto;">
+                    I, Captain Kimmer, have purchased a 55-year-old sailboat online from a foriegn country site unseen to sail solo across the Atlantic Ocean never having sailed a day in my life...
+                </p>
+               
+                <p style="text-align: justify; line-height: 1.8; font-size: 1.2rem; max-width: 800px; margin: 30px auto;">
+                    So far I've moved onto the ship, nearly burned it down, sailed through a Force 8 storm on the English Channel, experienced a full system failure on my way to Brest - sailing by compass at at night with just my genoa after losing the main sail, and crossed the legendary and treacherous waters of the Bay of Biscay where I made friends with dolphins, swam with an unexpected, scary, finned visitor, and saw an orca.
+                </p>
+                
+                <p style="text-align: justify; line-height: 1.8; font-size: 1.2rem; max-width: 800px; margin: 30px auto;">
+                    And, of course, I’ve caught the adventures all on camera for you to watch.
+                </p>
+                
+                
+              <!-- Centered YouTube Icon Button -->
+<div style="text-align: center; margin-top: 20px;">
+    <a href="https://www.youtube.com/playlist?list=PLaSxr9phleYTzfvM0pBTyTRXZGOy4bm8F" target="_blank">
+        <img src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/YoutubeLogo.png" 
+             alt="Watch on YouTube" 
+             style="width: 60px; height: auto; border-radius: 5px; transition: transform 0.3s ease-in-out;">
+    </a>
+</div>
+
+<p style="text-align: center; line-height: 1.8; font-size: 1.2rem; max-width: 800px; margin: 30px auto;">
+    <strong>Subscribe and Let's Make History Together!</strong>
+</p>
+
             </div>
             
                 
@@ -433,55 +458,85 @@
     
     <script>
         const galleryImages = [
-            { src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/AmericanFlag.jpg", title: "Ahoy! 🚢⚓" },
-            { src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/LeavingAirport.png", title: "To England to Buy Kite!" },
-            { src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/WavesWayBiggerThanTheShip.jpg", title: "Waves WAY BIGGER Than My Ship!" },
-            { src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/EatingSeaWaterSaltedNoodles.jpg", title: "Sea Water Salted Noodles" },
-            { src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/MainPhoto.jpg", title: "I'm A Captain Now!?" },
-            { src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/RepairingTheSails.jpg", title: "Repairs After a Violent Storm" },
-            { src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/SailingThroughAStorm.jpg", title: "A Violent Storm My First Time Sailing" },
-            { src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/ShipFire.jpg", title: "My Ship's on Fire!" }
-        ];
-    
-        let currentImageIndex = 0;
-        const galleryImage = document.getElementById("galleryImage");
-        const imageTitle = document.getElementById("imageTitle");
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-    
-        // Preload images to prevent flickering
-        galleryImages.forEach(image => {
-            const img = new Image();
-            img.src = image.src;
-        });
-    
-        function updateImage(index) {
-            galleryImage.style.opacity = 0; // Fade out
-            setTimeout(() => {
-                galleryImage.src = galleryImages[index].src;
-                imageTitle.textContent = galleryImages[index].title; // Update title
-                galleryImage.style.opacity = 1; // Fade in
-            }, 200);
-        }
-    
-        prevBtn.addEventListener("click", function () {
-            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-            updateImage(currentImageIndex);
-        });
-    
-        nextBtn.addEventListener("click", function () {
-            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-            updateImage(currentImageIndex);
-        });
-    
-        // Keyboard navigation (left/right arrow keys)
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "ArrowLeft") {
-                prevBtn.click();
-            } else if (event.key === "ArrowRight") {
-                nextBtn.click();
+            // Place the desired image as the first element
+            { 
+                src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/SailingThroughAStorm.jpg", 
+            },
+            { 
+                src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/AmericanFlag.jpg", 
+            },
+            { 
+                src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/LeavingAirport.png", 
+            },
+            { 
+                src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/WavesWayBiggerThanTheShip.jpg", 
+            },
+            { 
+                src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/EatingSeaWaterSaltedNoodles.jpg", 
+            },
+            { 
+                src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/MainPhoto.jpg", 
+            },
+            { 
+                src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/RepairingTheSails.jpg", 
+            },
+            { 
+                src: "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/Initial%20Photos/ShipFire.jpg", 
             }
-        });
+        ];
+        
+        let currentImageIndex = 0;
+const galleryImage = document.getElementById("galleryImage");
+const imageTitle = document.getElementById("imageTitle");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+// Preload images to prevent flickering
+galleryImages.forEach(image => {
+    const img = new Image();
+    img.src = image.src;
+});
+
+function updateImage(index) {
+    galleryImage.style.opacity = 0; // Fade out
+    setTimeout(() => {
+        galleryImage.src = galleryImages[index].src;
+        
+        // Keep the title ONLY for the first image
+        if (index === 0) {
+            imageTitle.textContent = galleryImages[index].title;
+        }
+        
+        galleryImage.style.opacity = 1; // Fade in
+    }, 200);
+}
+
+// Previous button
+prevBtn.addEventListener("click", function () {
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateImage(currentImageIndex);
+});
+
+// Next button
+nextBtn.addEventListener("click", function () {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    updateImage(currentImageIndex);
+});
+
+// Keyboard navigation (left/right arrow keys)
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowLeft") {
+        prevBtn.click();
+    } else if (event.key === "ArrowRight") {
+        nextBtn.click();
+    }
+});
+
+// ✅ Ensure the first image is displayed on page load
+window.onload = function() {
+    updateImage(0);
+};
+
     </script>
         
     
@@ -547,7 +602,13 @@
             }
         });
     </script>
-    
+    <script>
+        // Ensure the page starts at the top when loaded
+        window.onload = function() {
+            window.scrollTo(0, 0);
+            updateImage(0); // Ensure first image loads properly
+        };
+    </script>
     
 </body>
 
