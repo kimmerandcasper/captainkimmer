@@ -426,10 +426,10 @@
             // Initialize the map centered at a mid-point
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 5,
-                center: { lat: 50.0, lng: -10.0 }, // Center in the Atlantic for best view
+                center: { lat: 45.0, lng: -10.0 }, // Adjusted center for better Atlantic view
                 mapTypeId: "hybrid"
             });
-
+    
             const travelPathCoordinates = [
                 { lat: 46.2856, lng: -119.2845 },  // Richland, WA, USA
                 { lat: 33.4373, lng: -112.0078 },  // Phoenix, AZ, USA
@@ -438,9 +438,12 @@
                 { lat: 50.7964, lng: -0.9194 },    // East Head, Chichester Harbour, UK
                 { lat: 50.7975, lng: -0.9198 },    // Sparks Marina, UK
                 { lat: 49.6331, lng: -1.6221 },    // Cherbourg, France
-                { lat: 48.3904, lng: -4.4861 }     // Brest, France
+                { lat: 48.3904, lng: -4.4861 },    // Brest, France
+                { lat: 43.3713, lng: -8.3960 },    // A Coruña, Spain
+                { lat: 40.6443, lng: -8.6455 },    // Aveiro, Portugal
+                { lat: 38.7169, lng: -9.1399 }     // Lisboa, Portugal
             ];
-
+    
             // Create a polyline to show the travel path
             const travelPath = new google.maps.Polyline({
                 path: travelPathCoordinates,
@@ -449,19 +452,21 @@
                 strokeOpacity: 1.0,
                 strokeWeight: 4
             });
-
+    
             travelPath.setMap(map);
-
-            // Add markers for each location
+    
+            // Add markers for each location with labels
             travelPathCoordinates.forEach((location, index) => {
                 new google.maps.Marker({
                     position: location,
                     map: map,
-                    title: `Stop ${index + 1}`
+                    title: `Stop ${index + 1}`,
+                    label: `${index + 1}`
                 });
             });
         }
     </script>
+    
     
 </body>
 
