@@ -403,6 +403,50 @@
                     Click to <strong>Subscribe</strong> and join the adventure!
                 </p>
             </div>
+    
+ <!-- Buy Me a Coffee Section -->
+<p style="text-align: center; font-size: 1.2rem; margin-top: 20px;">
+    but if you want, you can always buy me coffee ☕️😋!
+</p>
+
+<div class="video-container" style="text-align: center;">
+    <!-- Animated Coffee Image (Still Using Beer1.png, Beer2.png, etc.) -->
+    <a href="https://www.paypal.com/ncp/payment/27M99GBVBDJN4" target="_blank">
+        <img id="animatedBeerJS" 
+             src="https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png" 
+             alt="Buy Me a Drink" 
+             style="width: 150px; height: auto; display: block; margin: auto;">
+    </a>
+
+    <p style="text-align: center; font-size: 1.2rem; margin-top: 10px;">
+        Click the Cup to Buy Coffee!
+    </p>
+</div>
+
+<!-- ✅ Coffee Animation Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const beerImages = [
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer1.png",
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer2.png",
+            "https://raw.githubusercontent.com/kimmerandcasper/captainkimmer/refs/heads/main/Photos/ProductImages/Beer3.png"
+        ];
+        
+        let index = 0;
+        function animateBeer() {
+            const imgElement = document.getElementById("animatedBeerJS");
+            if (imgElement) {
+                imgElement.src = beerImages[index];
+                index = (index + 1) % beerImages.length;
+            }
+        }
+
+        // Ensure the animation starts only after the page loads
+        setInterval(animateBeer, 300);
+    });
+</script>
+
+
     </section>
 
     <footer class="footer">
