@@ -430,13 +430,26 @@
             });
     
             const travelPathCoordinates = [
-  // Main Stops
+  // Main Stops (labeled)
   { lat: 46.2856, lng: -119.2845, label: "1" },  // Richland, WA, USA
   { lat: 33.4373, lng: -112.0078, label: "2" },  // Phoenix, AZ, USA
   { lat: 51.4700, lng: -0.4543, label: "3" },    // Heathrow Airport, UK
   { lat: 50.80368, lng: -0.85975, label: "4" },  // Itchenor, UK
+
+  // Water Checkpoints
+  { lat: 50.80944, lng: -0.87026 },  
+  { lat: 50.80826, lng: -0.88744 },
+
   { lat: 50.79011, lng: -0.91215, label: "5" },  // East Head, UK
+
+  // Water Checkpoint
+  { lat: 50.79046, lng: -0.93179 },
+
   { lat: 50.78652, lng: -0.94307, label: "6" },  // Sparks Marina
+
+  // Water Checkpoint
+  { lat: 50.77767, lng: -0.93352 },
+
   { lat: 49.6331, lng: -1.6221, label: "7" },    // Cherbourg
   { lat: 48.3904, lng: -4.4861, label: "8" },    // Brest
   { lat: 43.3713, lng: -8.3960, label: "9" },    // A Coruña
@@ -445,53 +458,30 @@
   { lat: 28.1235, lng: -15.4363, label: "12" },  // Las Palmas
   { lat: 3.1163, lng: -50.6164, label: "13" },   // NE Farol Calçoene
   { lat: 4.9330, lng: -52.3300, label: "14" },   // Cayenne, FG
-  { lat: 13.2678, lng: -59.6412, label: "15" },  // Barbados
-
-  // Water Checkpoints (no label property)
-  { lat: 50.80944, lng: -0.87026 },  
-  { lat: 50.80826, lng: -0.88744 },
-  { lat: 50.79046, lng: -0.93179 },
-  { lat: 50.77767, lng: -0.93352 }
+  { lat: 13.2678, lng: -59.6412, label: "15" }   // Barbados
 ];
-    
-            // Create a polyline to show the travel path
-            const travelPath = new google.maps.Polyline({
-                path: travelPathCoordinates,
-                geodesic: true,
-                strokeColor: "#FF0000",
-                strokeOpacity: 1.0,
-                strokeWeight: 4
-            });
-    
-            travelPath.setMap(map);
-    
-            // Add markers for each location with labels
-            travelPathCoordinates.forEach((location) => {
-    if (location.label) {
-        // Large, numbered markers for real stops
-        new google.maps.Marker({
-            position: location,
-            map: map,
-            label: {
-                text: location.label,
-                fontSize: "16px",
-                fontWeight: "bold"
-            }
-        });
-    } else {
-        // Tiny dot for water checkpoints (almost invisible)
-        new google.maps.Marker({
-            position: location,
-            map: map,
-            icon: {
-                path: google.maps.SymbolPath.CIRCLE,
-                scale: 2,
-                fillColor: "#000000",
-                fillOpacity: 0.2,
-                strokeWeight: 0
-            }
-        });
-    }
+
+// Polyline drawing (unchanged)
+const travelPath = new google.maps.Polyline({
+  path: travelPathCoordinates,
+  geodesic: true,
+  strokeColor: "#FF0000",
+  strokeOpacity: 1.0,
+  strokeWeight: 4
+});
+
+travelPath.setMap(map);
+
+// Add markers for only labeled locations
+travelPathCoordinates.forEach((location) => {
+  if (location.label) {
+    new google.maps.Marker({
+      position: location,
+      map: map,
+      title: `Stop ${location.label}`,
+      label: location.label
+    });
+  }
 });
         }
     </script>
